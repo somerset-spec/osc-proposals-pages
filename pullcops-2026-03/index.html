@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAEVklEQVR4nM1Xz0sjSRT+OiaLE/xJRNmoAUUNMoqjCerixR+sZhQhJ08edg/ePI548R8QZw5zUzx4krnMRSHIuqABIQZcGDyIuos5KKJRccEfmMQkb3llVaeNyay7jKMfNF1d1fW+r9979apaQxYQkQbApGlaQj7/CKAPwM8AmgGUA8iXr18COATwBcDvAH7TNO1IzssBkNQ0jbJxPQARmQzt10Q0TURhejzCcs7rTDa/CrpTzPdXRDRFRFGD4QQRxYkoKS8F9RyX7yhEpY1XRtuPIa8joj8Mhm7TCP8NSTlHgW3VfVUEpcjfGNwd+4/EmYSwDZI230QUQTI+RFRDRCeGr/5WULbYdo2RU1PZDuAHAOsAmgDEAZjxbaFsbgL4CUCMV4fR9e+lSuWyp4Cy/V6FQpMeqAWwxR6R3uD7U4BrQVLeeYn+xYWGH95J91A6eSKRQDweF3eiVC3htnHMiGQyqfdz2wC2TZLrHXOzB8oAbAMoNgpgAk176Ag2yP3pY+p9HjeZ7tectD7F8TeAelbyVpKzVLUadAK/34+dnR2UlpbC4/HAarWK/kgkAp/Ph9PTUzQ2NqKjo0PMY6Ld3V2sra3BbDaju7sbDofDKEKTXMz5lid9MlQxSiQSlEwmKRwOU3t7O9XU1NDAwAC5XC6y2+0UCATo/PycnE4ntbW10eDgIDkcDhoaGhLZNTY2RjabjXp7e6mnp0e0Z2dnSdmWUNX0EwvYkZ1J40ts3OPx0O1tqhxMTk4KESxoZGRE72dBlZWV5PV6qbi4mLa2tvQxv9/PLqft7W2jCFXcdljAhS4rLpxAwWCQLBYLXVzcDcViMX2Mv4oNjo6OUjSa2iYODg6oqKhIiGREIhF9js/no1AodPeVyXuF9cJs2FL1LN/Y2EBtbS3y8/NF7CwWi8hqbre0tCAUCmFlZQVVVVVobm5GZ2cnhoeHUVhYiKamJvEexz8nJ0e0+/v7U8vgfvLmZ90iM2U54/r6WiTc5uYmpqenUV9fj/n5eTidTpycnCA3N/eBLRYfi3HhywDKEIL19XURgsvLywchcLvd1NDQIPqMGB8fF6GZm5sTzzc3N/qcrq4uWlhYuMehQoBsSdja2vogCaempqikpITKyspoYmLingBOyvLycqqurqb9/X29f2ZmhqxWK52dnYn4yxzQk9Asj1F1cm2qfQGLi4vwer3Cxeze4+NjHB0dibWfl5eHvr4+LC0twW634/DwENFoFIFAAB8+fIDb7YbL5cLV1RX29vbEHJvNZqwFquZ84Ur4C4C5bIVodXVVFJb0QsS5sLy8jHA4jIqKCiGIk5XB+REMBlFQUCASkJMzrbIqrl//VylmpJdbNUdVw8eWYpOmaWEAn+Wgvqso8vTNiA3xlb4ZKcE8ZtyMMghSHJ+Z+/m3Y9yd/f8E8FEmIZ9cngpxyfFRcpqe/0j23IfSl3EsfxE/Ji/i1wwpEd/t5zTrev9ev+f/AE9oZziqphNnAAAAAElFTkSuQmCC">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>풀캅스 × OSC 쿠팡 판매대행 제안서</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+:root {
+  --navy: #1B2A4A;
+  --navy-light: #2A3F6A;
+  --blue: #3B7DD8;
+  --blue-light: #5A9BF0;
+  --blue-dim: rgba(59,125,216,.08);
+  --orange: #E8712B;
+  --orange-dim: rgba(232,113,43,.10);
+  --green: #27AE60;
+  --green-dim: rgba(39,174,96,.10);
+  --red: #C0392B;
+  --red-dim: rgba(192,57,43,.08);
+  --ink: #1B2A4A;
+  --ink-sub: #475569;
+  --ink-mute: #94A3B8;
+  --surface: #FFFFFF;
+  --surface-alt: #F8FAFC;
+  --border: #E2E8F0;
+  --insight-bg: #F0F4F8;
+  --font-display: 'Outfit','Pretendard Variable',sans-serif;
+  --font-body: 'Pretendard Variable',sans-serif;
+  --radius: 12px;
+  --shadow: 0 1px 3px rgba(15,23,42,.04),0 4px 14px rgba(15,23,42,.06);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-snap-type:y mandatory;overflow-x:hidden}
+body{font-family:var(--font-body);color:var(--ink);background:var(--surface);-webkit-font-smoothing:antialiased}
+
+/* SLIDE */
+.slide{
+  min-height:100dvh;width:100vw;overflow:hidden;scroll-snap-align:start;
+  display:flex;flex-direction:column;justify-content:center;align-items:center;
+  padding:clamp(2rem,5vw,5rem);position:relative;
+}
+.slide-inner{width:100%;max-width:960px}
+
+/* NAV */
+.nav-dots{position:fixed;right:clamp(14px,2vw,28px);top:50%;transform:translateY(-50%);z-index:100;display:flex;flex-direction:column;gap:10px}
+.nav-dots a{width:8px;height:8px;border-radius:50%;background:var(--border);display:block;transition:all .3s ease}
+.nav-dots a:hover,.nav-dots a.active{background:var(--blue);transform:scale(1.5)}
+.page-num{position:absolute;bottom:clamp(14px,2vw,28px);right:clamp(24px,3vw,40px);font-family:var(--font-display);font-size:11px;color:var(--ink-mute);letter-spacing:.1em}
+.confidential{position:absolute;bottom:clamp(14px,2vw,28px);left:clamp(24px,3vw,40px);font-family:var(--font-display);font-size:10px;color:var(--ink-mute);letter-spacing:.15em;text-transform:uppercase}
+
+/* REVEAL */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .65s cubic-bezier(.16,1,.3,1),transform .65s cubic-bezier(.16,1,.3,1)}
+.rv.visible{opacity:1;transform:translateY(0)}
+.rv-d1{transition-delay:.1s}.rv-d2{transition-delay:.2s}.rv-d3{transition-delay:.3s}
+.rv-d4{transition-delay:.4s}.rv-d5{transition-delay:.5s}
+
+/* TYPOGRAPHY */
+h1,h2,h3{font-family:var(--font-display);word-break:keep-all;text-wrap:balance}
+h1{font-weight:800;line-height:1.15;letter-spacing:-.02em}
+h2{font-weight:700;line-height:1.25;letter-spacing:-.015em}
+p,li{line-height:1.75;word-break:keep-all}
+.label{font-family:var(--font-display);font-size:clamp(10px,1.1vw,12px);font-weight:700;text-transform:uppercase;letter-spacing:.18em;color:var(--blue);margin-bottom:8px}
+.section-num{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:var(--navy);color:#fff;font-family:var(--font-display);font-size:14px;font-weight:700;margin-right:10px}
+.exhibit{font-family:var(--font-display);font-size:11px;color:var(--ink-mute);letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px}
+
+/* KPI CARD */
+.kpi-row{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,2vw,20px);margin-top:clamp(20px,3vh,36px)}
+.kpi-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:clamp(16px,2vw,24px);text-align:center;position:relative;overflow:hidden}
+.kpi-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px}
+.kpi-card:nth-child(1)::before{background:var(--blue)}
+.kpi-card:nth-child(2)::before{background:var(--orange)}
+.kpi-card:nth-child(3)::before{background:var(--green)}
+.kpi-card .num{font-family:var(--font-display);font-size:clamp(28px,3.5vw,42px);font-weight:800;line-height:1.1;color:var(--navy)}
+.kpi-card .unit{font-size:clamp(14px,1.5vw,18px);font-weight:600;color:var(--ink-sub)}
+.kpi-card .kpi-label{font-size:clamp(11px,1.1vw,13px);color:var(--ink-mute);margin-top:6px}
+
+/* KEY INSIGHT */
+.key-insight{border-left:4px solid var(--navy);background:var(--insight-bg);padding:clamp(14px,2vw,20px) clamp(16px,2vw,24px);border-radius:0 var(--radius) var(--radius) 0;margin-top:clamp(16px,2vh,24px)}
+.key-insight .ki-title{font-family:var(--font-display);font-size:11px;font-weight:700;letter-spacing:.12em;color:var(--navy);margin-bottom:6px}
+
+/* RECOMMENDATION */
+.recommendation{background:var(--navy);color:#fff;padding:clamp(20px,3vw,32px);border-radius:var(--radius);margin-top:clamp(16px,2vh,24px)}
+.recommendation .rec-title{font-family:var(--font-display);font-size:12px;font-weight:700;letter-spacing:.15em;margin-bottom:12px;opacity:.7}
+.recommendation li{color:rgba(255,255,255,.9);margin-bottom:8px}
+
+/* TABLE */
+.data-table{width:100%;border-collapse:collapse;font-size:clamp(12px,1.2vw,14px);margin-top:8px}
+.data-table thead th{background:var(--navy);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:clamp(11px,1.1vw,13px)}
+.data-table tbody td{padding:10px 14px;border-bottom:1px solid var(--border)}
+.data-table tbody tr:nth-child(even){background:#F9FAFB}
+.data-table .highlight-row{background:rgba(59,125,216,.06);font-weight:600}
+.data-table .total-row{background:var(--navy);color:#fff;font-weight:700}
+.data-table .total-row td{border-bottom:none}
+
+/* METRIC ROW */
+.metric-row{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(10px,1.5vw,16px);margin:clamp(16px,2vh,24px) 0}
+.metric-item{text-align:center;padding:clamp(12px,1.5vw,18px);background:var(--surface-alt);border-radius:var(--radius);border:1px solid var(--border)}
+.metric-item .m-num{font-family:var(--font-display);font-size:clamp(22px,2.8vw,32px);font-weight:800;color:var(--navy)}
+.metric-item .m-label{font-size:clamp(10px,1vw,12px);color:var(--ink-mute);margin-top:4px}
+
+/* BATTLECARD */
+.battlecard{width:100%;border-collapse:collapse;font-size:clamp(12px,1.2vw,14px)}
+.battlecard thead th{padding:10px 14px;font-weight:600;font-size:clamp(11px,1.1vw,13px)}
+.battlecard thead th:first-child{background:var(--surface-alt);color:var(--ink-sub);text-align:left}
+.battlecard thead th:nth-child(2){background:#FEE2E2;color:var(--red)}
+.battlecard thead th:nth-child(3){background:rgba(59,125,216,.1);color:var(--blue)}
+.battlecard tbody td{padding:10px 14px;border-bottom:1px solid var(--border)}
+.battlecard tbody td:first-child{font-weight:600;color:var(--ink-sub);background:var(--surface-alt)}
+.battlecard tbody td:nth-child(3){color:var(--navy);font-weight:600}
+
+/* ROADMAP */
+.roadmap{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(8px,1.2vw,14px);margin-top:clamp(12px,2vh,20px)}
+.phase-card{padding:clamp(14px,1.5vw,20px);border-radius:var(--radius);border:1px solid var(--border);position:relative}
+.phase-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;border-radius:var(--radius) var(--radius) 0 0}
+.phase-card:nth-child(1)::before{background:var(--blue)}
+.phase-card:nth-child(2)::before{background:var(--blue-light)}
+.phase-card:nth-child(3)::before{background:var(--orange)}
+.phase-card:nth-child(4)::before{background:var(--green)}
+.phase-card .ph-num{font-family:var(--font-display);font-size:11px;font-weight:700;color:var(--ink-mute);letter-spacing:.1em}
+.phase-card .ph-title{font-weight:700;font-size:clamp(13px,1.3vw,15px);margin:4px 0}
+.phase-card .ph-goal{font-family:var(--font-display);font-size:clamp(18px,2vw,24px);font-weight:800;color:var(--navy)}
+.phase-card .ph-detail{font-size:clamp(11px,1vw,12px);color:var(--ink-sub);margin-top:6px;line-height:1.5}
+
+/* CHART */
+.chart-wrap{max-width:100%;margin:12px auto;position:relative}
+
+/* DIVIDER */
+.double-line{border:none;border-top:3px double var(--navy);margin:clamp(12px,1.5vh,18px) 0}
+
+/* NODE DIAGRAM */
+.node-diagram{display:flex;align-items:center;justify-content:center;gap:0;margin:clamp(16px,2vh,24px) 0;flex-wrap:wrap}
+.node{padding:clamp(10px,1.2vw,16px) clamp(14px,1.5vw,20px);border-radius:var(--radius);text-align:center;font-size:clamp(12px,1.2vw,14px);font-weight:600;min-width:120px}
+.node-center{background:var(--navy);color:#fff;font-size:clamp(14px,1.4vw,16px);z-index:1}
+.node-adjacent{background:var(--surface);border:2px solid var(--blue);color:var(--navy)}
+.node-arrow{font-size:20px;color:var(--blue);padding:0 4px}
+
+/* BENEFIT CARD */
+.benefit-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(12px,1.5vw,18px);margin-top:clamp(14px,2vh,20px)}
+.benefit-card{padding:clamp(16px,2vw,24px);border-radius:var(--radius);border:1px solid var(--border);background:var(--surface)}
+.benefit-card .bc-icon{font-size:28px;margin-bottom:8px}
+.benefit-card .bc-title{font-family:var(--font-display);font-weight:700;font-size:clamp(14px,1.4vw,16px);color:var(--navy);margin-bottom:4px}
+.benefit-card .bc-desc{font-size:clamp(12px,1.2vw,13px);color:var(--ink-sub);line-height:1.6}
+
+/* GROWTH TIMELINE */
+.growth-timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(8px,1vw,12px);margin-top:clamp(14px,2vh,20px)}
+.gt-item{text-align:center;padding:clamp(14px,1.5vw,20px);border-radius:var(--radius);background:var(--surface-alt);border:1px solid var(--border);position:relative}
+.gt-item .gt-month{font-family:var(--font-display);font-size:clamp(10px,1vw,12px);font-weight:700;color:var(--ink-mute);letter-spacing:.1em}
+.gt-item .gt-revenue{font-family:var(--font-display);font-size:clamp(20px,2.5vw,28px);font-weight:800;color:var(--navy);margin:4px 0}
+.gt-item .gt-detail{font-size:clamp(10px,1vw,12px);color:var(--ink-sub);line-height:1.4}
+
+/* STEP LIST */
+.step-list{list-style:none;margin-top:clamp(14px,2vh,20px)}
+.step-list li{display:flex;align-items:flex-start;gap:14px;padding:clamp(12px,1.5vw,16px) 0;border-bottom:1px solid var(--border)}
+.step-list li:last-child{border-bottom:none}
+.step-num{display:inline-flex;align-items:center;justify-content:center;min-width:32px;height:32px;border-radius:50%;background:var(--blue);color:#fff;font-family:var(--font-display);font-size:14px;font-weight:700;flex-shrink:0}
+.step-text{font-size:clamp(13px,1.3vw,15px)}
+.step-text strong{color:var(--navy)}
+
+@media(max-width:768px){
+  .kpi-row,.metric-row{grid-template-columns:1fr}
+  .roadmap,.benefit-grid,.growth-timeline{grid-template-columns:repeat(2,1fr)}
+  .battlecard,.data-table{font-size:11px}
+  .node-diagram{flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV DOTS -->
+<nav class="nav-dots" aria-label="슬라이드 네비게이션">
+  <a href="#s1" title="표지"></a>
+  <a href="#s2" title="Executive Summary"></a>
+  <a href="#s3" title="시장 규모"></a>
+  <a href="#s4" title="경쟁 환경"></a>
+  <a href="#s5" title="인접 시장"></a>
+  <a href="#s6" title="수요 예측"></a>
+  <a href="#s7" title="왜 지금 쿠팡인가"></a>
+  <a href="#s8" title="판매 목표"></a>
+  <a href="#s9" title="OSC와 함께하면"></a>
+  <a href="#s10" title="함께 성장합시다"></a>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════
+     SLIDE 1: COVER
+     ═══════════════════════════════════════════════════ -->
+<section class="slide" id="s1" style="background:linear-gradient(160deg,#0F1B33 0%,#1B2A4A 40%,#2A3F6A 100%)">
+  <div class="slide-inner" style="color:#fff">
+    <div class="rv">
+      <p style="font-family:var(--font-display);font-size:clamp(11px,1.1vw,13px);font-weight:600;letter-spacing:.2em;color:rgba(255,255,255,.5);text-transform:uppercase;margin-bottom:clamp(10px,2vh,20px)">Sales Agency Proposal</p>
+      <h1 style="font-size:clamp(32px,4.5vw,56px);color:#fff;margin-bottom:clamp(8px,1.5vh,16px)">
+        풀캅스<br>
+        <span style="color:var(--blue-light)">쿠팡 판매대행 제안서</span>
+      </h1>
+      <p style="font-size:clamp(14px,1.5vw,18px);color:rgba(255,255,255,.65);max-width:640px;margin-bottom:8px">
+        쿠팡 키워드 분석 기반 시장 수요 예측 &amp; 판매 전략
+      </p>
+      <p style="font-size:clamp(13px,1.3vw,16px);color:rgba(255,255,255,.45);font-style:italic;max-width:640px">
+        "연 168만 검색, 77.5%가 아직 주인 없는 시장 — 먹어도 안전한 제초제의 빈자리가 쿠팡에 있습니다."
+      </p>
+    </div>
+
+    <div class="kpi-row rv rv-d2">
+      <div class="kpi-card" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1)">
+        <div style="font-family:var(--font-display);line-height:1.1"><span style="font-size:clamp(36px,4.5vw,54px);font-weight:800;color:var(--blue-light)">168</span><span style="font-size:clamp(20px,2.2vw,28px);font-weight:700;color:var(--blue-light);opacity:.7">만회</span></div>
+        <div class="kpi-label" style="color:rgba(255,255,255,.5)">연간 검색 노출</div>
+      </div>
+      <div class="kpi-card" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1)">
+        <div style="font-family:var(--font-display);line-height:1.1"><span style="font-size:clamp(36px,4.5vw,54px);font-weight:800;color:var(--orange)">77.5</span><span style="font-size:clamp(20px,2.2vw,28px);font-weight:700;color:var(--orange);opacity:.7">%</span></div>
+        <div class="kpi-label" style="color:rgba(255,255,255,.5)">잔여시장 (주인 없는 시장)</div>
+      </div>
+      <div class="kpi-card" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1)">
+        <div style="font-family:var(--font-display);line-height:1.1"><span style="font-size:clamp(36px,4.5vw,54px);font-weight:800;color:var(--green)">225</span><span style="font-size:clamp(20px,2.2vw,28px);font-weight:700;color:var(--green);opacity:.7">억</span></div>
+        <div class="kpi-label" style="color:rgba(255,255,255,.5)">비료+제초제 합산 시장</div>
+      </div>
+    </div>
+
+    <div class="rv rv-d3" style="margin-top:clamp(24px,4vh,40px);display:flex;align-items:center;gap:20px">
+      <div>
+        <p style="font-size:clamp(12px,1.2vw,14px);color:rgba(255,255,255,.4)">Prepared by</p>
+        <p style="font-size:clamp(14px,1.4vw,17px);font-weight:600;color:rgba(255,255,255,.8)">주식회사 오에스씨 (OSC)</p>
+        <p style="font-size:clamp(11px,1.1vw,13px);color:rgba(255,255,255,.35)">쿠팡 광고 파트너 · 200+ 브랜드 운영</p>
+      </div>
+    </div>
+  </div>
+  <span class="confidential" style="color:rgba(255,255,255,.25)">CONFIDENTIAL</span>
+  <span class="page-num" style="color:rgba(255,255,255,.25)">01</span>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     SLIDE 2: EXECUTIVE SUMMARY
+     ═══════════════════════════════════════════════════ -->
+<section class="slide" id="s2">
+  <div class="slide-inner">
+    <div class="rv">
+      <div style="display:flex;align-items:center;margin-bottom:6px"><span class="section-num">①</span><h2 style="font-size:clamp(22px,2.8vw,32px)">Executive Summary</h2></div>
+      <p style="color:var(--ink-sub);font-size:clamp(13px,1.3vw,15px)">시장 개요 및 핵심 발견사항</p>
+      <hr class="double-line">
+    </div>
+    <div class="rv rv-d1" style="margin-top:clamp(8px,1.5vh,14px)">
+      <p style="font-size:clamp(13px,1.3vw,15px);color:var(--ink-sub);max-width:800px">
+        쿠팡 "제초제" 키워드는 연 168만회 검색 노출, 84,200 클릭이 발생하는 시장입니다. <strong>1위조차 점유율 8.4%에 불과</strong>한 극도로 분산된 시장으로, 명확한 리더가 없습니다. 풀캅스는 "먹어도 안전한 세계최초 친환경 제초제"라는 압도적 USP를 보유하고 있으나, 쿠팡 미입점으로 이 수요를 놓치고 있습니다.
+      </p>
+    </div>
+    <div class="metric-row rv rv-d2">
+      <div class="metric-item"><div class="m-num">6.7<span style="font-size:.5em;font-weight:600">억</span></div><div class="m-label">제초제 직접 시장</div></div>
+      <div class="metric-item"><div class="m-num">225<span style="font-size:.5em;font-weight:600">억</span></div><div class="m-label">비료+제초제 합산</div></div>
+      <div class="metric-item"><div class="m-num" style="color:var(--orange)">77.5<span style="font-size:.5em;font-weight:600">%</span></div><div class="m-label">잔여시장</div></div>
+      <div class="metric-item"><div class="m-num" style="color:var(--green)">15<span style="font-size:.5em;font-weight:600">%</span></div><div class="m-label">광고비율 (低과열)</div></div>
+    </div>
+    <div class="key-insight rv rv-d3">
+      <div class="ki-title">KEY INSIGHT</div>
+      <p style="font-size:clamp(13px,1.3vw,15px)">제초제 시장은 <strong>리뷰 장벽·광고 과열·브랜드 락인 모두 낮은</strong> 이상적인 진입 환경입니다. "먹어도 안전한 친환경 제초제"라는 포지셔닝은 쿠팡에서 아직 아무도 차지하지 않은 빈자리이며, 비료 시장(218억)과의 카테고리 혼용으로 실질 노출 시장은 훨씬 큽니다.</p>
+    </div>
+  </div>
+  <span class="confidential">CONFIDENTIAL</span>
+  <span class="page-num">02</span>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     SLIDE 3: A1 시장 규모 추정
+     ═══════════════════════════════════════════════════ -->
+<section class="slide" id="s3">
+  <div class="slide-inner">
+    <div class="rv">
+      <div style="display:flex;align-items:center;margin-bottom:6px"><span class="section-num">②</span><h2 style="font-size:clamp(22px,2.8vw,32px)">시장 규모 추정</h2></div>
+      <p style="color:var(--ink-sub);font-size:clamp(13px,1.3vw,15px)">쿠팡 제초제 · 비료 시장 수요 분석</p>
+      <hr class="double-line">
+    </div>
+    <div class="rv rv-d1">
+      <p class="exhibit">EXHIBIT | 키워드별 시장 규모 <span style="color:var(--ink-mute);font-style:italic;text-transform:none;letter-spacing:0">— 출처: 쿠팡 키워드 분석 도구 (2026년 3월)</span></p>
+      <div class="chart-wrap" style="max-width:700px;height:240px">
+        <canvas id="chartMarketSize"></canvas>
+      </div>
+    </div>
+    <div class="rv rv-d2" style="margin-top:12px">
+      <table class="data-table">
+        <thead><tr><th>키워드</th><th>검색어 노출</th><th>연간 클릭</th><th>객단가</th><th>연간시장매출</th><th>시장 성격</th></tr></thead>
+        <tbody>
+          <tr><td><strong>제초제</strong></td><td>1,685,800</td><td>84,200</td><td>40,000원</td><td><strong>6.7억</strong></td><td>직접 시장</td></tr>
+          <tr><td><strong>비료</strong></td><td>46,606,000</td><td>3,631,000</td><td>30,000원</td><td><strong>218억</strong></td><td>인접 시장</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="key-insight rv rv-d3">
+      <div class="ki-title">TAM / SAM / SOM</div>
+      <p style="font-size:clamp(13px,1.3vw,15px)">
+        <strong>TAM</strong> (비료+제초제 합산): 연 <strong>225억</strong> ·
+        <strong>SAM</strong> (제초제 직접): 연 <strong>6.7억</strong> ·
+        <strong>SOM</strong> (1차 목표): 월 <strong>500~1,250만</strong>
+      </p>
+    </div>
+  </div>
+  <span class="confidential">CONFIDENTIAL</span>
+  <span class="page-num">03</span>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     SLIDE 4: A2 경쟁 환경 분석
+     ═══════════════════════════════════════════════════ -->
+<section class="slide" id="s4">
+  <div class="slide-inner">
+    <div class="rv">
+      <div style="display:flex;align-items:center;margin-bottom:6px"><span class="section-num">③</span><h2 style="font-size:clamp(22px,2.8vw,32px)">경쟁 환경 분석</h2></div>
+      <p style="color:var(--ink-sub);font-size:clamp(13px,1.3vw,15px)">제초제 시장 TOP 3 점유율 및 진입 기회</p>
+      <hr class="double-line">
+    </div>
+    <div class="rv rv-d1" style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2vw,28px);margin-top:12px">
+      <div>
+        <p class="exhibit">EXHIBIT | TOP 3 점유율</p>
+        <div class="chart-wrap" style="height:220px">
+          <canvas id="chartCompetition"></canvas>
+        </div>
+      </div>
+      <div>
+        <p class="exhibit">EXHIBIT | 진입 장벽 평가</p>
+        <table class="data-table" style="margin-top:12px">
+          <thead><tr><th>요소</th><th>수준</th><th>근거</th></tr></thead>
+          <tbody>
+            <tr><td>리뷰 장벽</td><td style="color:var(--green);font-weight:700">낮음</td><td>분산형, 1위 리뷰 제한적</td></tr>
+            <tr><td>광고 과열도</td><td style="color:var(--green);font-weight:700">낮음</td><td>광고비율 15%</td></tr>
+            <tr><td>브랜드 락인</td><td style="color:var(--green);font-weight:700">낮음</td><td>TOP3 집중도 22.5%</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="rv rv-d2" style="margin-top:12px">
+      <table class="data-table">
+        <thead><tr><th>순위</th><th>브랜드</th><th>연간 클릭</th><th>점유율</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>해승바이오</td><td>6,544</td><td>7.8%</td></tr>
+          <tr><td>2</td><td>COVANK</td><td>5,261</td><td>6.3%</td></tr>
+          <tr><td>3</td><td>열매팜스토어</td><td>7,106</td><td>8.4%</td></tr>
+          <tr class="total-row"><td colspan="2">잔여시장</td><td>65,289</td><td>77.5%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="recommendation rv rv-d3">
+      <div class="rec-title">OPPORTUNITY</div>
+      <p style="font-size:clamp(14px,1.4vw,16px)">1위조차 8.4%에 불과한 시장. <strong>"먹어도 안전한 친환경 제초제"</strong>라는 USP로 차별화된 포지셔닝이 가능하며, 체험단 100건 + 키워드 광고로 빠른 상위노출을 달성할 수 있습니다.</p>
+    </div>
+  </div>
+  <span class="confidential">CONFIDENTIAL</span>
+  <span class="page-num">04</span>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     SLIDE 5: A3 인접 시장 확장
+     ═══════════════════════════════════════════════════ -->
+<section class="slide" id="s5">
+  <div class="slide-inner">
+    <div class="rv">
+      <div style="display:flex;align-items:center;margin-bottom:6px"><span class="section-num">④</span><h2 style="font-size:clamp(22px,2.8vw,32px)">인접 시장 확장</h2></div>
+      <p style="color:var(--ink-sub);font-size:clamp(13px,1.3vw,15px)">비료 시장 218억 트래픽을 제초제가 흡수</p>
+      <hr class="double-line">
+    </div>
+    <div class="node-diagram rv rv-d1">
+      <div class="node node-adjacent">
+        <div style="font-size:clamp(10px,1vw,12px);color:var(--ink-mute)">인접 시장</div>
+        <div style="font-size:clamp(16px,1.8vw,22px);font-weight:800;color:var(--navy)">비료</div>
+        <div style="font-size:clamp(11px,1.1vw,13px);color:var(--ink-sub)">연 218억</div>
+        <div style="font-size:clamp(10px,1vw,11px);color:var(--ink-mute)">4,660만 검색노출</div>
+      </div>
+      <div class="node-arrow">→</div>
+      <div class="node node-center" style="min-width:160px">
+        <div style="font-size:clamp(10px,1vw,12px);opacity:.6">직접 시장</div>
+        <div style="font-size:clamp(18px,2vw,24px);font-weight:800">제초제</div>
+        <div style="font-size:clamp(12px,1.2vw,14px);opacity:.8">연 6.7억</div>
+      </div>
+      <div class="node-arrow">←</div>
+      <div class="node node-adjacent">
+        <div style="font-size:clamp(10px,1vw,12px);color:var(--ink-mute)">트래픽 흡수</div>
+        <div style="font-size:clamp(16px,1.8vw,22px);font-weight:800;color:var(--navy)">풀캅스</div>
+        <div style="font-size:clamp(11px,1.1vw,13px);color:var(--ink-sub)">토양개량제</div>
+        <div style="font-size:clamp(10px,1vw,11px);color:var(--ink-mute)">비료 키워드 진입 가능</div>
+      </div>
+    </div>
+    <div class="rv rv-d2">
+      <h3 style="font-size:clamp(16px,1.6vw,20px);margin-bottom:10px">풀캅스가 비료 트래픽을 흡수할 수 있는 이유</h3>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(10px,1.5vw,16px)">
+        <div style="padding:16px;background:var(--blue-dim);border-radius:var(--radius)">
+          <div style="font-weight:700;color:var(--navy);margin-bottom:4px">공식 분류</div>
+          <div style="font-size:clamp(12px,1.1vw,13px);color:var(--ink-sub)">풀캅스 = "미생물제제 토양개량제" → 비료 카테고리 진입 근거</div>
+        </div>
+        <div style="padding:16px;background:var(--orange-dim);border-radius:var(--radius)">
+          <div style="font-weight:700;color:var(--navy);margin-bottom:4px">카테고리 혼용</div>
+          <div style="font-size:clamp(12px,1.1vw,13px);color:var(--ink-sub)">쿠팡에서 "비료" 검색 시 제초제 상품도 함께 노출</div>
+        </div>
+        <div style="padding:16px;background:var(--green-dim);border-radius:var(--radius)">
+          <div style="font-weight:700;color:var(--navy);margin-bottom:4px">복합 니즈</div>
+          <div style="font-size:clamp(12px,1.1vw,13px);color:var(--ink-sub)">정원/잔디 관리 고객은 비료와 제초제를 함께 구매</div>
+        </div>
+      </div>
+    </div>
+    <div class="key-insight rv rv-d3">
+      <div class="ki-title">가용 시장 확장</div>
+      <p style="font-size:clamp(13px,1.3vw,15px)">직접 시장(6.7억) + 비료 트래픽 흡수(+20~30%) = <strong>실질 가용 시장 연 8~9억 이상</strong>. 비료 시장의 4,660만 검색 노출은 풀캅스의 숨은 기회입니다.</p>
+    </div>
+  </div>
+  <span class="confidential">CONFIDENTIAL</span>
+  <span class="page-num">05</span>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     SLIDE 6: A4 수요 예측 시나리오
+     ═══════════════════════════════════════════════════ -->
+<section class="slide" id="s6">
+  <div class="slide-inner">
+    <div class="rv">
+      <div style="display:flex;align-items:center;margin-bottom:6px"><span class="section-num">⑤</span><h2 style="font-size:clamp(22px,2.8vw,32px)">수요 예측 시나리오</h2></div>
+      <p style="color:var(--ink-sub);font-size:clamp(13px,1.3vw,15px)">점유율별 매출 시뮬레이션 및 SKU 확장 잠재력</p>
+      <hr class="double-line">
+    </div>
+    <div class="rv rv-d1">
+      <p class="exhibit">EXHIBIT | 실전 판매 목표 (5L 기준)</p>
+      <table class="data-table">
+        <thead><tr><th>시나리오</th><th>월 판매량</th><th>월 매출</th><th>연 매출</th></tr></thead>
+        <tbody>
+          <tr><td>보수적</td><td>200건</td><td>500만</td><td>6,000만</td></tr>
+          <tr class="highlight-row"><td><strong>기본</strong></td><td><strong>350건</strong></td><td><strong>875만</strong></td><td><strong>1.05억</strong></td></tr>
+          <tr><td>공격적</td><td>500건</td><td>1,250만</td><td>1.5억</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="rv rv-d2" style="margin-top:clamp(16px,2vh,24px)">
+      <p class="exhibit">EXHIBIT | SKU 확장 시 매출 잠재력</p>
+      <div class="chart-wrap" style="max-width:600px;height:200px">
+        <canvas id="chartSKU"></canvas>
+      </div>
+    </div>
+    <div class="recommendation rv rv-d3">
+      <div class="rec-title">GROWTH POTENTIAL</div>
+      <p style="font-size:clamp(14px,1.4vw,16px)">5L 단일 제품으로 <strong>월 875만원</strong>(기본 시나리오) 달성 가능. 2L 소용량 제품 추가 시 <strong>월 2,000만원+</strong>로 확장되며, 개인 소비자 접근성이 높아 판매량 잠재력은 5L의 2~3배입니다.</p>
+    </div>
+  </div>
+  <span class="confidential">CONFIDENTIAL</span>
+  <span class="page-num">06</span>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     SLIDE 7: C1 왜 지금 쿠팡인가
+     ═══════════════════════════════════════════════════ -->
+<section class="slide" id="s7" style="background:var(--surface-alt)">
+  <div class="slide-inner">
+    <div class="rv">
+      <div style="display:flex;align-items:center;margin-bottom:6px"><span class="section-num">⑥</span><h2 style="font-size:clamp(22px,2.8vw,32px)">왜 지금 쿠팡인가</h2></div>
+      <p style="color:var(--ink-sub);font-size:clamp(13px,1.3vw,15px)">풀캅스가 놓치고 있는 시장</p>
+      <hr class="double-line">
+    </div>
+    <div class="rv rv-d1" style="margin-top:12px">
+      <h3 style="font-size:clamp(16px,1.6vw,20px);margin-bottom:14px">풀캅스의 강점</h3>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px">
+        <div style="padding:14px;background:var(--surface);border-radius:var(--radius);border:1px solid var(--border);text-align:center">
+          <div style="font-size:24px;margin-bottom:4px">🌿</div>
+          <div style="font-weight:700;font-size:clamp(12px,1.2vw,14px);color:var(--navy)">먹어도 안전</div>
+          <div style="font-size:11px;color:var(--ink-mute)">세계최초</div>
+        </div>
+        <div style="padding:14px;background:var(--surface);border-radius:var(--radius);border:1px solid var(--border);text-align:center">
+          <div style="font-size:24px;margin-bottom:4px">🐕</div>
+          <div style="font-weight:700;font-size:clamp(12px,1.2vw,14px);color:var(--navy)">반려동물 안전</div>
+          <div style="font-size:11px;color:var(--ink-mute)">산책 중 안심</div>
+        </div>
+        <div style="padding:14px;background:var(--surface);border-radius:var(--radius);border:1px solid var(--border);text-align:center">
+          <div style="font-size:24px;margin-bottom:4px">🏛️</div>
+          <div style="font-weight:700;font-size:clamp(12px,1.2vw,14px);color:var(--navy)">조달청 등록</div>
+          <div style="font-size:11px;color:var(--ink-mute)">관공서 공인</div>
+        </div>
+        <div style="padding:14px;background:var(--surface);border-radius:var(--radius);border:1px solid var(--border);text-align:center">
+          <div style="font-size:24px;margin-bottom:4px">🔬</div>
+          <div style="font-weight:700;font-size:clamp(12px,1.2vw,14px);color:var(--navy)">선택적 제초</div>
+          <div style="font-size:11px;color:var(--ink-mute)">잔디는 살림</div>
+        </div>
+      </div>
+    </div>
+    <div class="rv rv-d2" style="margin-top:clamp(18px,2.5vh,28px)">
+      <h3 style="font-size:clamp(16px,1.6vw,20px);margin-bottom:10px;color:var(--red)">지금 놓치고 있는 수요</h3>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
+        <div style="padding:18px;background:var(--red-dim);border-radius:var(--radius);text-align:center">
+          <div style="font-family:var(--font-display);font-size:clamp(24px,3vw,36px);font-weight:800;color:var(--red)">168<span style="font-size:.5em">만회</span></div>
+          <div style="font-size:12px;color:var(--ink-sub)">연간 검색 노출</div>
+        </div>
+        <div style="padding:18px;background:var(--red-dim);border-radius:var(--radius);text-align:center">
+          <div style="font-family:var(--font-display);font-size:clamp(24px,3vw,36px);font-weight:800;color:var(--red)">84,200<span style="font-size:.5em">건</span></div>
+          <div style="font-size:12px;color:var(--ink-sub)">연간 클릭 (구매 의향)</div>
+        </div>
+        <div style="padding:18px;background:var(--red-dim);border-radius:var(--radius);text-align:center">
+          <div style="font-family:var(--font-display);font-size:clamp(24px,3vw,36px);font-weight:800;color:var(--red)">4,660<span style="font-size:.5em">만</span></div>
+          <div style="font-size:12px;color:var(--ink-sub)">비료 검색 노출 (혼용)</div>
+        </div>
+      </div>
+    </div>
+    <div class="recommendation rv rv-d3">
+      <div class="rec-title">지금 진입해야 하는 3가지 이유</div>
+      <ul style="list-style:none;padding:0">
+        <li style="margin-bottom:10px"><strong style="color:var(--blue-light)">① 분산형 시장 = 선점 효과</strong> — 1위도 8.4%, 지금 들어가면 빠르게 TOP 진입</li>
+        <li style="margin-bottom:10px"><strong style="color:var(--blue-light)">② 친환경 트렌드</strong> — ESG, 반려동물 안전 니즈와 맞물림</li>
+        <li><strong style="color:var(--blue-light)">③ 시즌 타이밍</strong> — 봄~여름 성수기 전 체험단/리뷰 확보 적기</li>
+      </ul>
+    </div>
+  </div>
+  <span class="confidential">CONFIDENTIAL</span>
+  <span class="page-num">07</span>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     SLIDE 8: C2 얼마나 팔 수 있는가
+     ═══════════════════════════════════════════════════ -->
+<section class="slide" id="s8">
+  <div class="slide-inner">
+    <div class="rv">
+      <div style="display:flex;align-items:center;margin-bottom:6px"><span class="section-num">⑦</span><h2 style="font-size:clamp(22px,2.8vw,32px)">베스트셀러 로드맵</h2></div>
+      <p style="color:var(--ink-sub);font-size:clamp(13px,1.3vw,15px)">단계별 성장 전략과 베스트셀러가 가져오는 변화</p>
+      <hr class="double-line">
+    </div>
+    <div class="roadmap rv rv-d1">
+      <div class="phase-card">
+        <div class="ph-num">PHASE 1</div>
+        <div class="ph-title">런칭</div>
+        <div class="ph-goal">1~2개월</div>
+        <div class="ph-detail">리뷰 확보 + 키워드 상위노출<br>"제초제" 첫 페이지 진입</div>
+      </div>
+      <div class="phase-card">
+        <div class="ph-num">PHASE 2</div>
+        <div class="ph-title">인지도</div>
+        <div class="ph-goal">2~4개월</div>
+        <div class="ph-detail">월 200~500건 안정화<br>"풀캅스 = 친환경 제초제"</div>
+      </div>
+      <div class="phase-card">
+        <div class="ph-num">PHASE 3</div>
+        <div class="ph-title">스케일업</div>
+        <div class="ph-goal">5개월~</div>
+        <div class="ph-detail">브랜드 전환 30%<br>카테고리 TOP 3 진입</div>
+      </div>
+      <div class="phase-card">
+        <div class="ph-num">PHASE 4</div>
+        <div class="ph-title">SKU 확장</div>
+        <div class="ph-goal">8개월~</div>
+        <div class="ph-detail">2L 런칭<br>월 2,000만+ 매출</div>
+      </div>
+    </div>
+    <div class="rv rv-d2" style="margin-top:clamp(18px,2.5vh,28px)">
+      <h3 style="font-size:clamp(16px,1.6vw,20px);margin-bottom:12px">베스트셀러가 되면</h3>
+      <div class="benefit-grid">
+        <div class="benefit-card">
+          <div class="bc-icon">🔍</div>
+          <div class="bc-title">쿠팡 1페이지 고정</div>
+          <div class="bc-desc">광고 없이도 "제초제" 키워드로 지속 유입. 광고 의존도가 낮아져 수익성이 개선됩니다.</div>
+        </div>
+        <div class="benefit-card">
+          <div class="bc-icon">📈</div>
+          <div class="bc-title">브랜드 검색 폭발</div>
+          <div class="bc-desc">"풀캅스"를 직접 검색하는 고객이 늘어, 전환율이 크게 높아집니다.</div>
+        </div>
+        <div class="benefit-card">
+          <div class="bc-icon">🔗</div>
+          <div class="bc-title">기존 판로 시너지</div>
+          <div class="bc-desc">쿠팡 인지도가 스마트스토어, G마켓, 옥션 매출을 동반 상승시킵니다.</div>
+        </div>
+        <div class="benefit-card">
+          <div class="bc-icon">🏢</div>
+          <div class="bc-title">B2B 영업력 강화</div>
+          <div class="bc-desc">관공서·아파트·체육시설 영업 시 "쿠팡 베스트셀러"가 강력한 레퍼런스가 됩니다.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <span class="confidential">CONFIDENTIAL</span>
+  <span class="page-num">08</span>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     SLIDE 9: C3 OSC와 함께하면
+     ═══════════════════════════════════════════════════ -->
+<section class="slide" id="s9">
+  <div class="slide-inner">
+    <div class="rv">
+      <div style="display:flex;align-items:center;margin-bottom:6px"><span class="section-num">⑧</span><h2 style="font-size:clamp(22px,2.8vw,32px)">OSC와 함께하면</h2></div>
+      <p style="color:var(--ink-sub);font-size:clamp(13px,1.3vw,15px)">"공급만 하세요. 판매는 저희가 합니다."</p>
+      <hr class="double-line">
+    </div>
+    <div class="rv rv-d1" style="margin-top:12px">
+      <p class="exhibit">역할 분담</p>
+      <table class="data-table">
+        <thead><tr><th>구분</th><th>브랜드사</th><th>OSC</th></tr></thead>
+        <tbody>
+          <tr><td>제품 공급</td><td style="color:var(--green);font-weight:700">✅ 공급가 납품</td><td>-</td></tr>
+          <tr><td>쿠팡 입점/운영</td><td>-</td><td style="color:var(--blue);font-weight:700">✅ 전체 담당</td></tr>
+          <tr><td>광고비 투입</td><td>-</td><td style="color:var(--blue);font-weight:700">✅ 전액 부담</td></tr>
+          <tr><td>숏폼 콘텐츠</td><td>-</td><td style="color:var(--blue);font-weight:700">✅ 제작/배포</td></tr>
+          <tr><td>체험단/리뷰</td><td>일부 참여</td><td style="color:var(--blue);font-weight:700">✅ 운영 총괄</td></tr>
+          <tr><td>프로모션/공구</td><td>-</td><td style="color:var(--blue);font-weight:700">✅ 기획/운영</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="rv rv-d2" style="margin-top:clamp(16px,2vh,24px)">
+      <p class="exhibit">일반 대행사 vs OSC</p>
+      <table class="battlecard">
+        <thead><tr><th>구분</th><th>일반 대행사</th><th>OSC</th></tr></thead>
+        <tbody>
+          <tr><td>서비스 범위</td><td>광고 집행 중심</td><td>입점부터 판매까지 A to Z</td></tr>
+          <tr><td>광고비</td><td>브랜드사 부담</td><td>OSC 전액 투자</td></tr>
+          <tr><td>재고 리스크</td><td>브랜드사 부담</td><td>OSC가 매입</td></tr>
+          <tr><td>담당 인력</td><td>1~2명 / 수십 브랜드</td><td>전문가 밀착 전담</td></tr>
+          <tr><td>계정 소유권</td><td>대행사 소유</td><td>브랜드사 소유</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="key-insight rv rv-d3">
+      <div class="ki-title">About OSC</div>
+      <p style="font-size:clamp(13px,1.3vw,15px)">8년 경력 이커머스 전문 에이전시 · <strong>쿠팡 광고 파트너</strong>(내부 데이터 접근 가능) · 200+ 브랜드, 2,000+ SKU 운영 경험</p>
+    </div>
+  </div>
+  <span class="confidential">CONFIDENTIAL</span>
+  <span class="page-num">09</span>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     SLIDE 10: C4 함께 성장합시다
+     ═══════════════════════════════════════════════════ -->
+<section class="slide" id="s10" style="background:linear-gradient(160deg,#0F1B33 0%,#1B2A4A 40%,#2A3F6A 100%)">
+  <div class="slide-inner" style="color:#fff">
+    <div class="rv">
+      <h2 style="font-size:clamp(26px,3.5vw,42px);color:#fff;margin-bottom:6px">함께 성장합시다</h2>
+      <p style="font-size:clamp(14px,1.4vw,17px);color:rgba(255,255,255,.6)">쿠팡이 브랜드 전체를 성장시킵니다</p>
+      <hr style="border:none;border-top:2px solid rgba(255,255,255,.15);margin:clamp(12px,1.5vh,18px) 0">
+    </div>
+    <div class="growth-timeline rv rv-d1">
+      <div class="gt-item" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1)">
+        <div class="gt-month" style="color:rgba(255,255,255,.5)">2개월</div>
+        <div class="gt-revenue" style="color:var(--blue-light)">500만+</div>
+        <div class="gt-detail" style="color:rgba(255,255,255,.5)">리뷰 100개+<br>키워드 상위노출</div>
+      </div>
+      <div class="gt-item" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1)">
+        <div class="gt-month" style="color:rgba(255,255,255,.5)">4개월</div>
+        <div class="gt-revenue" style="color:var(--blue-light)">875만+</div>
+        <div class="gt-detail" style="color:rgba(255,255,255,.5)">브랜드 인지도<br>바이럴 노출</div>
+      </div>
+      <div class="gt-item" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1)">
+        <div class="gt-month" style="color:rgba(255,255,255,.5)">6개월</div>
+        <div class="gt-revenue" style="color:var(--orange)">1,000만+</div>
+        <div class="gt-detail" style="color:rgba(255,255,255,.5)">카테고리 TOP<br>브랜드 검색 유입</div>
+      </div>
+      <div class="gt-item" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1)">
+        <div class="gt-month" style="color:rgba(255,255,255,.5)">12개월</div>
+        <div class="gt-revenue" style="color:var(--green)">2,000만+</div>
+        <div class="gt-detail" style="color:rgba(255,255,255,.5)">2L SKU 확장<br>다채널 시너지</div>
+      </div>
+    </div>
+    <div class="rv rv-d2" style="margin-top:clamp(18px,2.5vh,28px)">
+      <h3 style="font-size:clamp(16px,1.6vw,20px);color:#fff;margin-bottom:12px">쿠팡이 기존 판로에 미치는 영향</h3>
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px">
+        <div style="padding:16px;background:rgba(255,255,255,.06);border-radius:var(--radius);border:1px solid rgba(255,255,255,.1)">
+          <div style="font-weight:700;color:var(--blue-light);margin-bottom:4px">스마트스토어 / G마켓 / 옥션</div>
+          <div style="font-size:13px;color:rgba(255,255,255,.6)">브랜드 검색 증가로 기존 채널 매출 동반 상승</div>
+        </div>
+        <div style="padding:16px;background:rgba(255,255,255,.06);border-radius:var(--radius);border:1px solid rgba(255,255,255,.1)">
+          <div style="font-weight:700;color:var(--blue-light);margin-bottom:4px">B2B / 총판 / 대리점</div>
+          <div style="font-size:13px;color:rgba(255,255,255,.6)">"쿠팡 베스트셀러" 레퍼런스로 영업력·가맹 유치력 강화</div>
+        </div>
+      </div>
+    </div>
+    <div class="rv rv-d3" style="margin-top:clamp(24px,3vh,36px)">
+      <h3 style="font-size:clamp(16px,1.6vw,20px);color:#fff;margin-bottom:14px">다음 단계</h3>
+      <ul class="step-list" style="max-width:600px">
+        <li style="border-color:rgba(255,255,255,.1)">
+          <span class="step-num">①</span>
+          <span class="step-text" style="color:rgba(255,255,255,.85)"><strong style="color:#fff">공급가 협의</strong> — 본 제안 기반 합의</span>
+        </li>
+        <li style="border-color:rgba(255,255,255,.1)">
+          <span class="step-num">②</span>
+          <span class="step-text" style="color:rgba(255,255,255,.85)"><strong style="color:#fff">계약 체결</strong> — 판매대행 계약</span>
+        </li>
+        <li style="border-color:rgba(255,255,255,.1)">
+          <span class="step-num">③</span>
+          <span class="step-text" style="color:rgba(255,255,255,.85)"><strong style="color:#fff">제품 입고</strong> — 최소 15일분 재고</span>
+        </li>
+        <li style="border-color:rgba(255,255,255,.1)">
+          <span class="step-num">④</span>
+          <span class="step-text" style="color:rgba(255,255,255,.85)"><strong style="color:#fff">쿠팡 런칭</strong> — 상품 등록 → 체험단 → 광고</span>
+        </li>
+        <li style="border-bottom:none">
+          <span class="step-num" style="background:var(--green)">⑤</span>
+          <span class="step-text" style="color:rgba(255,255,255,.85)"><strong style="color:#fff">성과 리포팅</strong> — 주간/월간 정기 보고</span>
+        </li>
+      </ul>
+    </div>
+    <div class="rv rv-d4" style="margin-top:clamp(24px,3vh,36px);text-align:center">
+      <p style="font-size:clamp(12px,1.2vw,14px);color:rgba(255,255,255,.4)">Prepared by</p>
+      <p style="font-size:clamp(16px,1.6vw,20px);font-weight:700;color:rgba(255,255,255,.8)">주식회사 오에스씨 (OSC)</p>
+      <p style="font-size:clamp(12px,1.2vw,14px);color:rgba(255,255,255,.35)">쿠팡 광고 파트너 · 200+ 브랜드 운영</p>
+    </div>
+  </div>
+  <span class="confidential" style="color:rgba(255,255,255,.25)">CONFIDENTIAL</span>
+  <span class="page-num" style="color:rgba(255,255,255,.25)">10</span>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     SCRIPTS
+     ═══════════════════════════════════════════════════ -->
+<script>
+// Reveal on scroll
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');
+const id=e.target.closest('.slide')?.id;if(id){document.querySelectorAll('.nav-dots a').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+id))}}})},{threshold:.15});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+
+// Charts
+document.fonts.ready.then(()=>{
+  const defs={responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}}};
+
+  // Market Size Bar Chart
+  new Chart(document.getElementById('chartMarketSize'),{type:'bar',data:{
+    labels:['제초제','비료'],
+    datasets:[{data:[6.7,218],backgroundColor:['#3B7DD8','#5A9BF0'],borderRadius:6,barThickness:60}]
+  },options:{...defs,indexAxis:'y',scales:{
+    x:{grid:{display:false},ticks:{callback:v=>v+'억',font:{family:'Outfit',weight:'600'}}},
+    y:{grid:{display:false},ticks:{font:{family:'Pretendard Variable',size:14,weight:'700'}}}
+  },plugins:{...defs.plugins,tooltip:{callbacks:{label:c=>c.raw+'억원'}}}}});
+
+  // Competition Donut
+  new Chart(document.getElementById('chartCompetition'),{type:'doughnut',data:{
+    labels:['해승바이오 7.8%','COVANK 6.3%','열매팜스토어 8.4%','잔여시장 77.5%'],
+    datasets:[{data:[7.8,6.3,8.4,77.5],backgroundColor:['#3B7DD8','#5A9BF0','#E8712B','#E2E8F0'],borderWidth:0}]
+  },options:{...defs,cutout:'55%',plugins:{legend:{display:true,position:'bottom',labels:{font:{family:'Pretendard Variable',size:11},boxWidth:10,padding:8}}}}});
+
+  // SKU Expansion Chart
+  new Chart(document.getElementById('chartSKU'),{type:'bar',data:{
+    labels:['5L 단독','5L + 2L'],
+    datasets:[
+      {label:'5L',data:[875,875],backgroundColor:'#3B7DD8',borderRadius:6,barThickness:50},
+      {label:'2L',data:[0,1250],backgroundColor:'#27AE60',borderRadius:6,barThickness:50}
+    ]
+  },options:{...defs,scales:{
+    x:{stacked:true,grid:{display:false},ticks:{font:{family:'Pretendard Variable',weight:'600'}}},
+    y:{stacked:true,grid:{color:'#E2E8F0'},ticks:{callback:v=>v+'만',font:{family:'Outfit',weight:'600'}}}
+  },plugins:{...defs.plugins,legend:{display:true,position:'top',labels:{font:{family:'Pretendard Variable',size:11},boxWidth:10}}}}});
+});
+</script>
+</body>
+</html>
