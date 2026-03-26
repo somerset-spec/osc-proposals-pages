@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>해맑음심리상담교육원 x 5FUNNEL 마케팅 제안</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════════
+   ROOT DESIGN TOKENS
+   ══════════════════════════════════════════ */
+:root {
+  --primary: #3E90F5;
+  --primary-dim: rgba(62,144,245,.08);
+  --primary-mid: rgba(62,144,245,.18);
+  --primary-glow: rgba(62,144,245,.35);
+  --highlight: #FF8C42;
+  --highlight-dim: rgba(255,140,66,.10);
+  --accent: #50D000;
+  --accent-dim: rgba(80,208,0,.10);
+  --purple: #7C3AED;
+  --purple-dim: rgba(124,58,237,.10);
+  --danger: #EF4444;
+  --danger-dim: rgba(239,68,68,.08);
+  --warn: #F59E0B;
+  --warn-dim: rgba(245,158,11,.10);
+  --teal: #0D9488;
+  --teal-dim: rgba(13,148,136,.10);
+
+  --ink: #0F172A;
+  --ink-sub: #475569;
+  --ink-mute: #94A3B8;
+  --surface: #FFFFFF;
+  --surface-alt: #F8FAFC;
+  --surface-dark: #0F172A;
+  --border: #E2E8F0;
+  --border-light: #F1F5F9;
+
+  --font-display: 'Outfit', 'Pretendard Variable', sans-serif;
+  --font-body: 'Pretendard Variable', sans-serif;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --shadow-card: 0 1px 3px rgba(15,23,42,.04), 0 4px 14px rgba(15,23,42,.06);
+  --shadow-lift: 0 4px 12px rgba(15,23,42,.06), 0 12px 36px rgba(15,23,42,.10);
+  --shadow-glow-primary: 0 0 40px rgba(62,144,245,.18);
+}
+
+/* ══════════════════════════════════════════
+   RESET & BASE
+   ══════════════════════════════════════════ */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-snap-type:y mandatory;overflow-x:hidden}
+body{font-family:var(--font-body);color:var(--ink);background:var(--surface);-webkit-font-smoothing:antialiased;font-feature-settings:'ss01','ss02'}
+
+/* ══════════════════════════════════════════
+   SLIDE FRAME
+   ══════════════════════════════════════════ */
+.slide{
+  min-height:100dvh;width:100vw;overflow:hidden;scroll-snap-align:start;
+  display:flex;flex-direction:column;justify-content:center;align-items:center;
+  padding:clamp(2rem,5vw,5rem);position:relative;
+}
+
+/* ── NAV DOTS ── */
+.nav-dots{
+  position:fixed;right:clamp(14px,2vw,28px);top:50%;
+  transform:translateY(-50%);z-index:100;
+  display:flex;flex-direction:column;gap:10px;
+}
+.nav-dots a{
+  width:8px;height:8px;border-radius:50%;
+  background:var(--border);display:block;
+  transition:all .35s cubic-bezier(.4,0,.2,1);
+}
+.nav-dots a:hover,.nav-dots a.active{
+  background:var(--primary);
+  box-shadow:0 0 8px var(--primary-glow);
+  transform:scale(1.5);
+}
+/* ── SLIDE COUNTER ── */
+.slide-counter{
+  position:fixed;bottom:clamp(14px,2vw,28px);right:clamp(14px,2vw,28px);
+  font-family:var(--font-display);font-size:clamp(11px,1.1vw,13px);
+  color:var(--ink-mute);z-index:100;
+  background:rgba(255,255,255,.85);padding:5px 14px;border-radius:20px;
+  backdrop-filter:blur(12px);border:1px solid var(--border);
+  font-variant-numeric:tabular-nums;
+}
+
+/* ══════════════════════════════════════════
+   REVEAL ANIMATION (IO-based)
+   ══════════════════════════════════════════ */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
+.rv.visible{opacity:1;transform:translateY(0)}
+.rv-d1{transition-delay:.1s}.rv-d2{transition-delay:.2s}.rv-d3{transition-delay:.3s}
+.rv-d4{transition-delay:.4s}.rv-d5{transition-delay:.5s}.rv-d6{transition-delay:.6s}
+.rv-scale{opacity:0;transform:scale(.92);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1)}
+.rv-scale.visible{opacity:1;transform:scale(1)}
+
+/* ══════════════════════════════════════════
+   TYPOGRAPHY
+   ══════════════════════════════════════════ */
+h1,h2,h3{font-family:var(--font-display);word-break:keep-all;text-wrap:balance}
+h1{font-weight:800;line-height:1.18;letter-spacing:-.02em}
+h2{font-weight:700;line-height:1.25;letter-spacing:-.015em}
+h3{font-weight:600;line-height:1.35}
+p,li{line-height:1.75;word-break:keep-all}
+.label{
+  font-family:var(--font-display);font-size:clamp(10px,1.1vw,12px);
+  font-weight:700;text-transform:uppercase;letter-spacing:.18em;
+  color:var(--primary);margin-bottom:clamp(6px,1.2vh,14px);
+}
+.t-primary{color:var(--primary)}.t-highlight{color:var(--highlight)}
+.t-accent{color:var(--accent)}.t-danger{color:var(--danger)}
+.t-purple{color:var(--purple)}.t-teal{color:var(--teal)}
+.t-sub{color:var(--ink-sub)}.t-mute{color:var(--ink-mute)}
+
+/* ══════════════════════════════════════════
+   LAYOUT
+   ══════════════════════════════════════════ */
+.container{max-width:1080px;width:100%}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,3vw,32px)}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:clamp(14px,2.5vw,28px)}
+.center{text-align:center}
+
+/* ══════════════════════════════════════════
+   CARD SYSTEM
+   ══════════════════════════════════════════ */
+.card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--radius-lg);padding:clamp(22px,3vw,40px);
+  box-shadow:var(--shadow-card);font-size:clamp(15px,1.6vw,19px);
+  transition:transform .35s cubic-bezier(.4,0,.2,1),box-shadow .35s cubic-bezier(.4,0,.2,1);
+}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lift)}
+.card-top-primary{border-top:3px solid var(--primary)}
+.card-top-highlight{border-top:3px solid var(--highlight)}
+.card-top-accent{border-top:3px solid var(--accent)}
+.card-top-purple{border-top:3px solid var(--purple)}
+.card-top-danger{border-top:3px solid var(--danger)}
+.card-top-teal{border-top:3px solid var(--teal)}
+.card-tint-danger{background:var(--danger-dim);border-color:rgba(239,68,68,.15)}
+.card-tint-accent{background:var(--accent-dim);border-color:rgba(80,208,0,.15)}
+.card-tint-primary{background:var(--primary-dim);border-color:rgba(62,144,245,.15)}
+
+/* ══════════════════════════════════════════
+   BADGE
+   ══════════════════════════════════════════ */
+.badge{
+  display:inline-block;padding:5px 14px;border-radius:20px;
+  font-size:clamp(11px,1.2vw,14px);font-weight:700;
+  font-family:var(--font-display);letter-spacing:.04em;
+}
+.badge-primary{background:var(--primary);color:#fff}
+.badge-highlight{background:var(--highlight);color:#fff}
+.badge-accent{background:var(--accent);color:#fff}
+.badge-danger{background:var(--danger);color:#fff}
+.badge-teal{background:var(--teal);color:#fff}
+.badge-outline{background:transparent;border:1.5px solid var(--primary);color:var(--primary)}
+
+/* ══════════════════════════════════════════
+   STYLED TABLE
+   ══════════════════════════════════════════ */
+.tbl{
+  width:100%;border-collapse:separate;border-spacing:0;
+  border-radius:var(--radius-md);overflow:hidden;
+  font-size:clamp(14px,1.5vw,18px);
+}
+.tbl thead th{
+  background:var(--surface-dark);color:#fff;
+  padding:clamp(10px,1.5vh,16px) clamp(12px,1.5vw,20px);
+  font-family:var(--font-display);font-weight:600;text-align:left;
+}
+.tbl tbody td{
+  padding:clamp(10px,1.5vh,16px) clamp(12px,1.5vw,20px);
+  border-bottom:1px solid var(--border-light);
+}
+.tbl tbody tr:last-child td{border-bottom:none}
+.tbl tbody tr:nth-child(even){background:var(--surface-alt)}
+.tbl .row-highlight{background:var(--primary-dim)!important;font-weight:600}
+.tbl .row-alert{background:var(--danger-dim)!important}
+
+/* ══════════════════════════════════════════
+   MATRIX GRID
+   ══════════════════════════════════════════ */
+.matrix{display:grid;grid-template-columns:auto repeat(6,1fr);gap:2px;font-size:clamp(13px,1.4vw,16px)}
+.mx-group{text-align:center;padding:clamp(10px,1.5vh,16px) clamp(8px,1vw,14px);font-family:var(--font-display);font-weight:700;font-size:clamp(14px,1.5vw,18px);letter-spacing:.04em;border-radius:8px 8px 0 0}
+.mx-group-search{background:#1E3A5F;color:#fff;grid-column:span 3}
+.mx-group-discover{background:#3D1F5C;color:#fff;grid-column:span 3}
+.mx-group-empty{background:transparent}
+.mx-h{background:var(--surface-dark);color:#fff;padding:clamp(10px,1.4vh,16px) clamp(8px,1vw,14px);font-weight:600;text-align:center;font-family:var(--font-display)}
+.mx-r{background:var(--surface-alt);padding:clamp(10px,1.4vh,16px) clamp(8px,1vw,14px);font-weight:700;display:flex;align-items:center;font-size:clamp(14px,1.5vw,17px)}
+.mx-c{padding:clamp(10px,1.4vh,16px) clamp(8px,1vw,14px);text-align:center;border-radius:6px;transition:all .3s ease}
+.mx-empty{background:#F1F5F9;color:var(--ink-mute)}
+.mx-active{background:var(--primary-mid);color:var(--primary);font-weight:700;border:2px solid rgba(62,144,245,.3)}
+.mx-weak{background:var(--warn-dim);color:#92400E;font-weight:700;border:2px solid rgba(245,158,11,.3)}
+.mx-blog{background:rgba(80,208,0,.15);color:#166534;font-weight:700;border:2px solid rgba(80,208,0,.3)}
+.mx-short{background:var(--highlight-dim);color:#C2410C;font-weight:700;border:2px solid rgba(255,140,66,.3)}
+.mx-new{background:var(--primary-dim);color:var(--primary);font-weight:700;border:2px solid rgba(62,144,245,.3)}
+
+/* ══════════════════════════════════════════
+   FLOW DIAGRAM
+   ══════════════════════════════════════════ */
+.flow{display:flex;align-items:center;gap:clamp(4px,1vw,12px);flex-wrap:wrap;justify-content:center}
+.flow-node{
+  padding:clamp(14px,2vh,24px) clamp(18px,2.5vw,32px);
+  border-radius:var(--radius-md);text-align:center;font-weight:500;
+  font-size:clamp(14px,1.5vw,18px);min-width:clamp(90px,12vw,140px);
+}
+.fn-broken{background:var(--danger-dim);border:2px dashed var(--danger);color:var(--danger)}
+.fn-weak{background:var(--warn-dim);border:2px dashed var(--warn);color:#92400E}
+.fn-ok{background:var(--accent-dim);border:2px solid var(--accent);color:#166534}
+.fn-new{background:var(--primary-dim);border:2px solid var(--primary);color:var(--primary)}
+.flow-arr{font-size:clamp(16px,2vw,24px);color:var(--ink-mute);font-family:var(--font-display)}
+.flow-arr-broken{color:var(--danger)}
+.flow-arr-ok{color:var(--accent)}
+
+/* ══════════════════════════════════════════
+   PRICING
+   ══════════════════════════════════════════ */
+.price-card{
+  border-radius:var(--radius-lg);padding:clamp(22px,3vw,40px);
+  text-align:center;position:relative;overflow:hidden;
+  background:var(--surface);border:1px solid var(--border);
+  box-shadow:var(--shadow-card);
+}
+.price-card.featured{
+  border:2px solid var(--primary);
+  box-shadow:var(--shadow-glow-primary);
+}
+.price-card.featured::before{
+  content:'CORE';position:absolute;top:18px;right:-30px;
+  background:var(--primary);color:#fff;padding:4px 40px;
+  font-size:10px;font-weight:700;transform:rotate(45deg);
+  font-family:var(--font-display);letter-spacing:.12em;
+}
+.price-name{font-family:var(--font-display);font-size:clamp(16px,2vw,22px);font-weight:700;margin-bottom:8px}
+.price-amount{font-family:var(--font-display);font-size:clamp(26px,3.5vw,40px);font-weight:800;margin-bottom:18px}
+.price-list{list-style:none;text-align:left;font-size:clamp(13px,1.3vw,16px)}
+.price-list li{padding:7px 0;border-bottom:1px solid var(--border-light);display:flex;align-items:flex-start;gap:8px}
+.price-list li:last-child{border-bottom:none}
+.price-list li::before{content:'✓';color:var(--accent);font-weight:700;flex-shrink:0}
+
+/* ══════════════════════════════════════════
+   TIMELINE
+   ══════════════════════════════════════════ */
+.timeline{display:flex;gap:clamp(10px,2.5vw,24px);align-items:flex-start}
+.tl-item{flex:1;text-align:center;position:relative}
+.tl-dot{
+  width:clamp(40px,5.5vw,60px);height:clamp(40px,5.5vw,60px);
+  border-radius:50%;background:var(--primary);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--font-display);font-weight:800;
+  font-size:clamp(16px,2.2vw,24px);margin:0 auto 14px;
+  position:relative;z-index:1;
+  box-shadow:0 4px 16px rgba(62,144,245,.3);
+}
+.tl-item:not(:last-child)::after{
+  content:'';position:absolute;top:clamp(20px,2.75vw,30px);
+  left:calc(50% + clamp(20px,2.75vw,30px));right:calc(-50% + clamp(20px,2.75vw,30px));
+  height:3px;background:var(--primary-mid);z-index:0;
+}
+.tl-label{font-family:var(--font-display);font-weight:700;font-size:clamp(16px,1.8vw,22px);margin-bottom:8px}
+.tl-desc{font-size:clamp(14px,1.5vw,18px);color:var(--ink-sub);line-height:1.7}
+
+/* ══════════════════════════════════════════
+   CTA SLIDE
+   ══════════════════════════════════════════ */
+.slide-cta{
+  background:linear-gradient(160deg,#0F172A 0%,#1E293B 50%,#0F172A 100%);
+  color:#fff;
+}
+.slide-cta h2{color:#fff}
+.cta-hl{color:var(--highlight)}
+
+/* ══════════════════════════════════════════
+   LOGO
+   ══════════════════════════════════════════ */
+.logo{font-family:var(--font-display);font-weight:800;font-style:italic;letter-spacing:-.02em}
+
+/* ══════════════════════════════════════════
+   RESPONSIVE
+   ══════════════════════════════════════════ */
+@media(max-width:768px){
+  .g2,.g3{grid-template-columns:1fr}
+  .flow{flex-direction:column}
+  .flow-arr{transform:rotate(90deg)}
+  .timeline{flex-direction:column}
+  .tl-item:not(:last-child)::after{display:none}
+  .matrix{font-size:9px}
+}
+/* ══════════════════════════════════════════
+   PULSE ANIMATION (for SVG)
+   ══════════════════════════════════════════ */
+@keyframes pulse-ring{
+  0%,100%{r:24;opacity:.7;stroke-width:2.5px}
+  50%{r:38;opacity:0;stroke-width:1px}
+}
+.pulse-ring{animation:pulse-ring 2s ease-out infinite}
+
+@media(prefers-reduced-motion:reduce){
+  .rv,.rv-scale{transition:none;opacity:1;transform:none}
+  .pulse-ring{animation:none}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav-dots" id="navDots"></nav>
+<div class="slide-counter" id="slideCounter"></div>
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 1 · TITLE
+     ═══════════════════════════════════════════════ -->
+<section class="slide" id="s1" style="background:linear-gradient(160deg,#070B14 0%,#0F172A 40%,#162036 100%);color:#fff">
+  <div class="container center">
+    <div class="rv" style="margin-bottom:clamp(24px,5vh,56px)">
+      <span class="logo" style="font-size:clamp(32px,5vw,56px);color:#fff">5FUNNEL</span>
+    </div>
+    <h1 class="rv rv-d1" style="font-size:clamp(30px,5vw,68px);color:#fff;margin-bottom:clamp(10px,2vh,20px)">
+      해맑음심리상담교육원<br><span class="t-primary">마케팅 제안</span>
+    </h1>
+    <p class="rv rv-d2" style="font-size:clamp(14px,1.6vw,20px);color:rgba(255,255,255,.5)">
+      2026년 3월
+    </p>
+    <div class="rv rv-d3" style="margin-top:clamp(32px,5vh,60px);display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+      <span class="badge" style="background:rgba(255,255,255,.08);color:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.12)">업력 8년</span>
+      <span class="badge" style="background:rgba(255,255,255,.08);color:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.12)">관리 브랜드 200+</span>
+      <span class="badge" style="background:rgba(255,255,255,.08);color:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.12)">누적 매출 600억+</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 2 · HOOK — BIG STATEMENT
+     ═══════════════════════════════════════════════ -->
+<section class="slide" id="s2">
+  <div class="container center" style="max-width:920px">
+    <h1 class="rv" style="font-size:clamp(26px,4.2vw,52px);line-height:1.35;margin-bottom:clamp(20px,4vh,40px)">
+      6개월 교육 후 바로 <span class="t-primary">정규직 전환</span>.<br>
+      상담사 교육 시장에서 이런 곳은<br><span class="t-primary">해맑음</span>뿐입니다.
+    </h1>
+    <p class="rv rv-d2" style="font-size:clamp(18px,2.8vw,34px);color:var(--danger);font-weight:700">
+      그런데 "상담사 교육"을 검색하면,<br>해맑음이 보이지 않습니다.
+    </p>
+    <div class="rv rv-d4" style="margin-top:clamp(24px,4vh,40px);padding:clamp(14px,2vh,24px) clamp(20px,3vw,36px);background:var(--surface-alt);border-radius:var(--radius-md);display:inline-block">
+      <p class="t-sub" style="font-size:clamp(14px,1.5vw,18px)">
+        부족한 건 교육의 질이 아니라, <strong>그 사실이 보이지 않는 것</strong>입니다.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 3 · HOOK — 상세 설명
+     ═══════════════════════════════════════════════ -->
+<section class="slide" id="s3" style="background:var(--surface-alt)">
+  <div class="container" style="max-width:920px">
+    <h2 class="rv" style="font-size:clamp(24px,3.5vw,42px);margin-bottom:clamp(20px,3vh,36px)">
+      해맑음의 상품 구조는<br>이미 <span class="t-primary">압도적</span>입니다
+    </h2>
+    <div class="g2">
+      <div class="card card-top-primary rv rv-d1">
+        <div class="badge badge-primary" style="margin-bottom:14px">아카데미 과정</div>
+        <h3 style="font-size:clamp(18px,2.2vw,26px);margin-bottom:12px">초기 상담사 → 정규직</h3>
+        <p class="t-sub" style="font-size:clamp(14px,1.4vw,17px)">
+          학부/대학원 졸업 → 6개월 교육(주말반)<br>
+          → 수료·시험 통과 시 <strong class="t-primary">바로 정규직 전환</strong>
+        </p>
+      </div>
+      <div class="card card-top-highlight rv rv-d2">
+        <div class="badge badge-highlight" style="margin-bottom:14px">프리랜서 과정</div>
+        <h3 style="font-size:clamp(18px,2.2vw,26px);margin-bottom:12px">경력 전문가 → 수익화</h3>
+        <p class="t-sub" style="font-size:clamp(14px,1.4vw,17px)">
+          정신건강전문요원, 상담심리사, 치료사 등<br>
+          교육 이수 후 <strong class="t-highlight">프리랜서 근무(기본급+비율제)</strong>
+        </p>
+      </div>
+    </div>
+    <div class="rv rv-d3" style="margin-top:clamp(20px,3vh,32px);padding:clamp(16px,2vh,28px);background:var(--surface);border-radius:var(--radius-md);border:1px solid var(--border)">
+      <p style="font-size:clamp(15px,1.6vw,19px);text-align:center">
+        지금 이 순간에도 <strong>"자격증은 땄는데 어디서 실습하지?"</strong>, <strong>"상담센터 취업이 안 된다는데..."</strong><br>
+        이런 고민을 안고 검색하는 사람들이 만나는 건 해맑음이 아니라 <strong class="t-danger">다른 교육원</strong>입니다.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 4 · 5FUNNEL 소개
+     ═══════════════════════════════════════════════ -->
+<section class="slide" id="s4">
+  <div class="container">
+    <h2 class="rv" style="font-size:clamp(28px,4vw,48px);margin-bottom:clamp(8px,1.5vh,14px)">5FUNNEL 소개</h2>
+    <p class="rv rv-d1 t-sub" style="font-size:clamp(14px,1.5vw,18px);margin-bottom:clamp(24px,4vh,40px)">우리는 두 가지 질문을 끊임없이 고민합니다</p>
+    <div class="g2">
+      <div class="card card-top-primary rv rv-d2">
+        <div class="badge badge-primary" style="margin-bottom:14px">빅퀘스천 1</div>
+        <h3 style="font-size:clamp(20px,2.8vw,30px);margin-bottom:12px">잘 판다는 것은<br>무엇인가?</h3>
+        <p class="t-sub" style="font-size:clamp(14px,1.4vw,17px)">
+          상황에 따라 마케팅 <strong>목표(목적지)</strong>를 설정하고<br>
+          그 목적에 이르는 <strong>길(방법)</strong>을 알려주는 것
+        </p>
+      </div>
+      <div class="card card-top-highlight rv rv-d3">
+        <div class="badge badge-highlight" style="margin-bottom:14px">빅퀘스천 2</div>
+        <h3 style="font-size:clamp(20px,2.8vw,30px);margin-bottom:12px">잘 팔려면 어떻게<br>해야 하는가?</h3>
+        <p class="t-sub" style="font-size:clamp(14px,1.4vw,17px)">
+          고객이 <strong>누구</strong>인지, <strong>어디</strong>에 모여있는지<br>
+          어떤 <strong>메시지</strong>에 반응하는지를 설계하는 것
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 5 · 다른 대행사와 무엇이 다른가 + 잠실 성과
+     ═══════════════════════════════════════════════ -->
+<section class="slide" id="s5" style="background:var(--surface-alt)">
+  <div class="container">
+    <p class="label rv">Why 5FUNNEL</p>
+    <h2 class="rv rv-d1" style="font-size:clamp(24px,3.5vw,42px);margin-bottom:clamp(16px,3vh,32px)">
+      다른 대행사와 무엇이 다른가?
+    </h2>
+    <table class="tbl rv rv-d2">
+      <thead>
+        <tr><th style="width:28%">구분</th><th>일반 대행사</th><th style="color:var(--primary)">5FUNNEL</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>접근 방식</strong></td><td>블로그/숏폼 개별 실행</td><td style="color:var(--primary);font-weight:600">고객 전체 동선을 설계한 후 실행</td></tr>
+        <tr><td><strong>제안 근거</strong></td><td>"이거 하면 좋습니다"</td><td style="color:var(--primary);font-weight:600">"여기가 비어있고, 왜 채워야 하는지" 설명</td></tr>
+        <tr><td><strong>성과 관리</strong></td><td>채널 단위 보고</td><td style="color:var(--primary);font-weight:600">타이밍 + 고객 위치 + 메시지 통합 관리</td></tr>
+      </tbody>
+    </table>
+    <div class="card card-tint-primary rv rv-d4" style="margin-top:clamp(20px,3vh,32px)">
+      <h3 style="font-size:clamp(18px,2.2vw,26px);margin-bottom:12px">
+        <span class="t-primary">이미 함께하고 있습니다</span>
+      </h3>
+      <p style="font-size:clamp(15px,1.6vw,19px)">
+        해맑음 잠실센터 — 블로그 통합관리 3주 만에 <strong class="t-primary">신규 유입 8건</strong>, <strong class="t-primary">장기 고객 4건</strong>(패키지)<br>
+        <span class="t-sub">이번 제안은 그 성과를 교육원과 서초센터로 확장하는 것입니다.</span>
+      </p>
+    </div>
+    <p class="rv rv-d5 center t-mute" style="margin-top:clamp(14px,2vh,24px);font-size:clamp(11px,1.2vw,14px)">
+      주식회사 오에스씨 (OSC) · 업력 8년 · 관리 브랜드 200개+ · 누적 매출 600억+ · 벤처기업 인증
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 6 · 시장 / 경쟁 환경
+     ═══════════════════════════════════════════════ -->
+<section class="slide" id="s6">
+  <div class="container">
+    <h2 class="rv" style="font-size:clamp(26px,3.8vw,46px);margin-bottom:clamp(6px,1vh,12px)">시장 / 경쟁 환경</h2>
+    <p class="rv rv-d1 t-sub" style="font-size:clamp(14px,1.5vw,18px);margin-bottom:clamp(20px,3vh,32px)">상담사 교육 시장의 구조적 병목</p>
+    <div class="flow rv rv-d2" style="margin-bottom:clamp(24px,4vh,36px)">
+      <div class="flow-node fn-ok" style="font-weight:700">자격증 취득</div>
+      <span class="flow-arr flow-arr-broken">→</span>
+      <div class="flow-node fn-broken">취업 불가</div>
+      <span class="flow-arr flow-arr-broken">→</span>
+      <div class="flow-node fn-broken">경력 쌓을 곳 없음</div>
+      <span class="flow-arr flow-arr-broken">→</span>
+      <div class="flow-node fn-broken">개업도 못 함</div>
+    </div>
+    <table class="tbl rv rv-d3">
+      <thead>
+        <tr><th>경쟁 유형</th><th>특징</th><th>한계</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>대학원 부설</strong></td><td>학위 과정, 이론 중심</td><td>수료 후 취업 연계 없음</td></tr>
+        <tr><td><strong>온라인 자격증</strong></td><td>저가, 접근 쉬움</td><td>실습 없음, 현장 무관</td></tr>
+        <tr><td><strong>일반 교육원</strong></td><td>실습 일부 포함</td><td>수료 후 본인이 알아서 취업</td></tr>
+        <tr><td><strong>플랫폼</strong></td><td>상담사 매칭 (마인드카페 등)</td><td>교육 아닌 중개, 경력자 위주</td></tr>
+        <tr class="row-highlight"><td><strong class="t-primary">해맑음</strong></td><td><strong>교육 → 실습 → 정규직 전환</strong></td><td><span class="t-danger">온라인 노출 부족</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 7 · 포지셔닝 맵
+     ═══════════════════════════════════════════════ -->
+<section class="slide" id="s7" style="background:var(--surface-alt)">
+  <div class="container center">
+    <h2 class="rv" style="font-size:clamp(26px,3.8vw,46px);margin-bottom:clamp(16px,3vh,32px)">
+      <span class="t-primary">우상단</span>에 해맑음만 있습니다
+    </h2>
+    <div class="rv rv-d2" style="max-width:580px;margin:0 auto">
+      <svg viewBox="0 0 400 320" style="width:100%;height:auto">
+        <line x1="50" y1="280" x2="380" y2="280" stroke="#CBD5E1" stroke-width="2"/>
+        <line x1="50" y1="280" x2="50" y2="20" stroke="#CBD5E1" stroke-width="2"/>
+        <text x="215" y="310" text-anchor="middle" fill="#64748B" font-family="Pretendard Variable,sans-serif" font-size="12" font-weight="600">실습 중심 →</text>
+        <text x="15" y="150" text-anchor="middle" fill="#64748B" font-family="Pretendard Variable,sans-serif" font-size="12" font-weight="600" transform="rotate(-90 15 150)">취업연계 →</text>
+        <!-- 선점 기회 영역 -->
+        <rect x="216" y="20" width="164" height="130" rx="8" fill="rgba(62,144,245,.06)" stroke="#3E90F5" stroke-width="1.5" stroke-dasharray="6,4"/>
+        <text x="298" y="50" text-anchor="middle" fill="#3E90F5" font-family="Outfit,sans-serif" font-size="11" font-weight="700">유일한 포지션</text>
+        <!-- 해맑음 (목표 위치) — CSS pulse -->
+        <circle cx="310" cy="80" r="28" fill="none" stroke="#3E90F5" stroke-width="2.5" class="pulse-ring"/>
+        <circle cx="310" cy="80" r="18" fill="#3E90F5"/>
+        <text x="310" y="85" text-anchor="middle" fill="#fff" font-family="Pretendard Variable,sans-serif" font-size="9" font-weight="700">해맑음</text>
+        <!-- 대학원 부설 -->
+        <circle cx="120" cy="200" r="12" fill="#94A3B8" opacity=".6"/>
+        <text x="120" y="228" text-anchor="middle" fill="#64748B" font-family="Pretendard Variable,sans-serif" font-size="10">대학원 부설</text>
+        <!-- 일반 교육원 -->
+        <circle cx="180" cy="220" r="10" fill="#94A3B8" opacity=".5"/>
+        <text x="180" y="248" text-anchor="middle" fill="#94A3B8" font-family="Pretendard Variable,sans-serif" font-size="9">일반 교육원</text>
+        <!-- 온라인 자격증 -->
+        <circle cx="300" cy="250" r="10" fill="#94A3B8" opacity=".5"/>
+        <text x="300" y="268" text-anchor="middle" fill="#94A3B8" font-family="Pretendard Variable,sans-serif" font-size="9">온라인 자격증</text>
+        <!-- 플랫폼 -->
+        <circle cx="260" cy="180" r="10" fill="#94A3B8" opacity=".5"/>
+        <text x="260" y="208" text-anchor="middle" fill="#94A3B8" font-family="Pretendard Variable,sans-serif" font-size="9">플랫폼(중개)</text>
+      </svg>
+    </div>
+    <p class="rv rv-d4 t-sub" style="font-size:clamp(14px,1.5vw,18px);margin-top:clamp(8px,1.5vh,16px)">
+      준오아카데미(준오헤어)가 미용 업계에서 동일한 구조로 <strong>30년간 성장</strong>한 검증된 모델입니다.<br>
+      문제는 이 포지션이 <strong class="t-danger">온라인에서 보이지 않는다</strong>는 것입니다.
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 8 · 매트릭스 AS-IS
+     ═══════════════════════════════════════════════ -->
+<section class="slide" id="s8">
+  <div class="container">
+    <h2 class="rv" style="font-size:clamp(26px,3.5vw,42px);margin-bottom:clamp(6px,1vh,12px)">현황 진단</h2>
+    <p class="rv rv-d1 t-sub" style="font-size:clamp(13px,1.4vw,17px);margin-bottom:clamp(16px,2.5vh,28px)">AS-IS — 현재 마케팅 커버리지</p>
+    <div class="matrix rv rv-d2">
+      <div class="mx-group-empty"></div>
+      <div class="mx-group mx-group-search">검색</div>
+      <div class="mx-group mx-group-discover">발견</div>
+      <div class="mx-h" style="background:transparent"></div>
+      <div class="mx-h" style="background:#1E3A5F">OWNED</div>
+      <div class="mx-h" style="background:#1E3A5F">EARNED</div>
+      <div class="mx-h" style="background:#1E3A5F">PAID</div>
+      <div class="mx-h" style="background:#3D1F5C">OWNED</div>
+      <div class="mx-h" style="background:#3D1F5C">EARNED</div>
+      <div class="mx-h" style="background:#3D1F5C">PAID</div>
+      <!-- 인지 -->
+      <div class="mx-r">인지</div>
+      <div class="mx-c mx-empty">—</div>
+      <div class="mx-c mx-weak">△ 블로그 (방치)</div>
+      <div class="mx-c mx-weak">△ 검색광고</div>
+      <div class="mx-c mx-weak">△ 인스타 (방치)</div>
+      <div class="mx-c mx-empty">—</div>
+      <div class="mx-c mx-empty">—</div>
+      <!-- 고려 -->
+      <div class="mx-r">고려</div>
+      <div class="mx-c mx-weak">△ 홈페이지</div>
+      <div class="mx-c mx-empty">—</div>
+      <div class="mx-c mx-empty">—</div>
+      <div class="mx-c mx-empty">—</div>
+      <div class="mx-c mx-empty">—</div>
+      <div class="mx-c mx-empty">—</div>
+      <!-- 전환 -->
+      <div class="mx-r">전환</div>
+      <div class="mx-c mx-weak">△ 문의폼</div>
+      <div class="mx-c mx-empty">—</div>
+      <div class="mx-c mx-empty">—</div>
+      <div class="mx-c mx-empty">—</div>
+      <div class="mx-c mx-empty">—</div>
+      <div class="mx-c mx-empty">—</div>
+      <!-- 유지 -->
+      <div class="mx-r">유지</div>
+      <div class="mx-c mx-active">▪ 채용연계</div>
+      <div class="mx-c mx-empty">—</div>
+      <div class="mx-c mx-empty">—</div>
+      <div class="mx-c mx-empty">—</div>
+      <div class="mx-c mx-empty">—</div>
+      <div class="mx-c mx-empty">—</div>
+    </div>
+    <div class="rv rv-d4" style="margin-top:clamp(12px,2vh,20px);display:flex;gap:16px;justify-content:center;flex-wrap:wrap;font-size:clamp(12px,1.3vw,14px)">
+      <span><span style="display:inline-block;width:12px;height:12px;background:var(--primary-mid);border:2px solid rgba(62,144,245,.3);border-radius:3px;vertical-align:middle;margin-right:4px"></span> 운영 중 (강점)</span>
+      <span><span style="display:inline-block;width:12px;height:12px;background:var(--warn-dim);border:2px solid rgba(245,158,11,.3);border-radius:3px;vertical-align:middle;margin-right:4px"></span> 존재하나 방치</span>
+      <span><span style="display:inline-block;width:12px;height:12px;background:#F1F5F9;border-radius:3px;vertical-align:middle;margin-right:4px"></span> 없음</span>
+    </div>
+    <p class="rv rv-d5 center" style="margin-top:10px;font-size:clamp(15px,1.6vw,19px)">
+      <strong class="t-danger">채용연계(강점)만 있고, 나머지가 거의 비어있는 상태입니다.</strong>
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 9 · 매트릭스 TO-BE
+     ═══════════════════════════════════════════════ -->
+<section class="slide" id="s9" style="background:var(--surface-alt)">
+  <div class="container">
+    <h2 class="rv" style="font-size:clamp(26px,3.5vw,42px);margin-bottom:clamp(6px,1vh,12px)">제안 후 커버리지</h2>
+    <p class="rv rv-d1 t-sub" style="font-size:clamp(13px,1.4vw,17px);margin-bottom:clamp(16px,2.5vh,28px)">TO-BE — 블로그 + 숏폼으로 빈칸을 채웁니다</p>
+    <div class="matrix rv rv-d2">
+      <div class="mx-group-empty"></div>
+      <div class="mx-group mx-group-search">검색</div>
+      <div class="mx-group mx-group-discover">발견</div>
+      <div class="mx-h" style="background:transparent"></div>
+      <div class="mx-h" style="background:#1E3A5F">OWNED</div>
+      <div class="mx-h" style="background:#1E3A5F">EARNED</div>
+      <div class="mx-h" style="background:#1E3A5F">PAID</div>
+      <div class="mx-h" style="background:#3D1F5C">OWNED</div>
+      <div class="mx-h" style="background:#3D1F5C">EARNED</div>
+      <div class="mx-h" style="background:#3D1F5C">PAID</div>
+      <!-- 인지 -->
+      <div class="mx-r">인지</div>
+      <div class="mx-c mx-blog">★ 블로그 (교육원)</div>
+      <div class="mx-c mx-empty">—</div>
+      <div class="mx-c mx-weak">△ 검색광고</div>
+      <div class="mx-c mx-short">★ 숏폼</div>
+      <div class="mx-c mx-empty">—</div>
+      <div class="mx-c mx-empty">—</div>
+      <!-- 고려 -->
+      <div class="mx-r">고려</div>
+      <div class="mx-c mx-blog">★ 블로그 (후기)</div>
+      <div class="mx-c mx-empty">—</div>
+      <div class="mx-c mx-empty">—</div>
+      <div class="mx-c mx-short">★ 숏폼 (사례)</div>
+      <div class="mx-c mx-empty">—</div>
+      <div class="mx-c mx-empty">—</div>
+      <!-- 전환 -->
+      <div class="mx-r">전환</div>
+      <div class="mx-c mx-blog">▪ 홈피 + 블로그</div>
+      <div class="mx-c mx-empty">—</div>
+      <div class="mx-c mx-empty">—</div>
+      <div class="mx-c mx-empty">—</div>
+      <div class="mx-c mx-empty">—</div>
+      <div class="mx-c mx-empty">—</div>
+      <!-- 유지 -->
+      <div class="mx-r">유지</div>
+      <div class="mx-c mx-active">▪ 채용연계</div>
+      <div class="mx-c mx-empty">—</div>
+      <div class="mx-c mx-empty">—</div>
+      <div class="mx-c mx-short">★ 숏폼 (수료생)</div>
+      <div class="mx-c mx-empty">—</div>
+      <div class="mx-c mx-empty">—</div>
+    </div>
+    <div class="rv rv-d4" style="margin-top:clamp(12px,2vh,20px);display:flex;gap:16px;justify-content:center;flex-wrap:wrap;font-size:clamp(12px,1.3vw,14px)">
+      <span><span style="display:inline-block;width:12px;height:12px;background:var(--primary-mid);border:2px solid rgba(62,144,245,.3);border-radius:3px;vertical-align:middle;margin-right:4px"></span> 기존 유지</span>
+      <span><span style="display:inline-block;width:12px;height:12px;background:rgba(80,208,0,.15);border:2px solid rgba(80,208,0,.3);border-radius:3px;vertical-align:middle;margin-right:4px"></span> ★ 브랜드블로그 (NEW)</span>
+      <span><span style="display:inline-block;width:12px;height:12px;background:rgba(255,140,66,.10);border:2px solid rgba(255,140,66,.3);border-radius:3px;vertical-align:middle;margin-right:4px"></span> ★ 숏폼 (NEW)</span>
+    </div>
+    <p class="rv rv-d5 center" style="margin-top:10px;font-size:clamp(15px,1.6vw,19px)">
+      <strong class="t-accent">검색 OWNED + 발견 OWNED이 동시에 생깁니다.</strong>
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 10 · 고객경로 진단 (AS-IS)
+     ═══════════════════════════════════════════════ -->
+<section class="slide" id="s10">
+  <div class="container">
+    <h2 class="rv" style="font-size:clamp(26px,3.8vw,46px);margin-bottom:clamp(6px,1vh,12px)">고객경로 진단</h2>
+    <p class="rv rv-d1 t-sub" style="font-size:clamp(14px,1.5vw,18px);margin-bottom:clamp(20px,3vh,32px)">잠재 수강생이 해맑음을 만나기까지</p>
+    <div class="rv rv-d2" style="margin-bottom:clamp(20px,3vh,32px);position:relative;overflow-x:auto">
+      <svg viewBox="0 0 800 260" style="width:100%;max-width:900px;height:auto;display:block;margin:0 auto">
+        <!-- Row 1: 발견 → 검색 → 정보수집 → 비교검토 -->
+        <rect x="20" y="20" width="160" height="64" rx="12" fill="#FEE2E2" stroke="#EF4444" stroke-width="2" stroke-dasharray="6,4"/>
+        <text x="100" y="46" text-anchor="middle" fill="#DC2626" font-family="Pretendard Variable,sans-serif" font-size="15" font-weight="700">발견</text>
+        <text x="100" y="68" text-anchor="middle" fill="#DC2626" font-family="Pretendard Variable,sans-serif" font-size="11">SNS 없음</text>
+
+        <line x1="180" y1="52" x2="210" y2="52" stroke="#EF4444" stroke-width="3"/>
+        <text x="195" y="44" text-anchor="middle" fill="#EF4444" font-family="Outfit,sans-serif" font-size="18" font-weight="800">✗</text>
+
+        <rect x="210" y="20" width="160" height="64" rx="12" fill="#FEF3C7" stroke="#F59E0B" stroke-width="2" stroke-dasharray="6,4"/>
+        <text x="290" y="46" text-anchor="middle" fill="#92400E" font-family="Pretendard Variable,sans-serif" font-size="15" font-weight="700">검색</text>
+        <text x="290" y="68" text-anchor="middle" fill="#92400E" font-family="Pretendard Variable,sans-serif" font-size="11">상위 노출 없음</text>
+
+        <line x1="370" y1="52" x2="410" y2="52" stroke="#94A3B8" stroke-width="2"/>
+        <polygon points="405,46 415,52 405,58" fill="#94A3B8"/>
+
+        <rect x="410" y="20" width="160" height="64" rx="12" fill="#FEE2E2" stroke="#EF4444" stroke-width="2" stroke-dasharray="6,4"/>
+        <text x="490" y="46" text-anchor="middle" fill="#DC2626" font-family="Pretendard Variable,sans-serif" font-size="15" font-weight="700">정보수집</text>
+        <text x="490" y="68" text-anchor="middle" fill="#DC2626" font-family="Pretendard Variable,sans-serif" font-size="11">콘텐츠 부재</text>
+
+        <line x1="570" y1="52" x2="600" y2="52" stroke="#EF4444" stroke-width="3"/>
+        <text x="585" y="44" text-anchor="middle" fill="#EF4444" font-family="Outfit,sans-serif" font-size="18" font-weight="800">✗</text>
+
+        <rect x="600" y="20" width="160" height="64" rx="12" fill="#FEE2E2" stroke="#EF4444" stroke-width="2" stroke-dasharray="6,4"/>
+        <text x="680" y="46" text-anchor="middle" fill="#DC2626" font-family="Pretendard Variable,sans-serif" font-size="15" font-weight="700">비교검토</text>
+        <text x="680" y="68" text-anchor="middle" fill="#DC2626" font-family="Pretendard Variable,sans-serif" font-size="11">후기 없음</text>
+
+        <!-- Big down arrow -->
+        <line x1="400" y1="90" x2="400" y2="130" stroke="#94A3B8" stroke-width="3"/>
+        <polygon points="392,126 400,138 408,126" fill="#94A3B8"/>
+
+        <!-- Row 2: 브랜드검색 → 홈페이지 → 문의 → 교육등록 -->
+        <rect x="20" y="145" width="170" height="64" rx="12" fill="#FEF3C7" stroke="#F59E0B" stroke-width="2" stroke-dasharray="6,4"/>
+        <text x="105" y="170" text-anchor="middle" fill="#92400E" font-family="Pretendard Variable,sans-serif" font-size="14" font-weight="700">브랜드 검색</text>
+        <text x="105" y="192" text-anchor="middle" fill="#92400E" font-family="Pretendard Variable,sans-serif" font-size="11">"해맑음 교육원"</text>
+
+        <line x1="190" y1="177" x2="225" y2="177" stroke="#94A3B8" stroke-width="2"/>
+        <polygon points="220,171 230,177 220,183" fill="#94A3B8"/>
+
+        <rect x="230" y="145" width="150" height="64" rx="12" fill="#FEF3C7" stroke="#F59E0B" stroke-width="2" stroke-dasharray="6,4"/>
+        <text x="305" y="174" text-anchor="middle" fill="#92400E" font-family="Pretendard Variable,sans-serif" font-size="14" font-weight="700">홈페이지 방문</text>
+
+        <line x1="380" y1="177" x2="440" y2="177" stroke="#50D000" stroke-width="3"/>
+        <polygon points="435,171 445,177 435,183" fill="#50D000"/>
+
+        <rect x="445" y="145" width="130" height="64" rx="12" fill="#DCFCE7" stroke="#50D000" stroke-width="2"/>
+        <text x="510" y="182" text-anchor="middle" fill="#166534" font-family="Pretendard Variable,sans-serif" font-size="16" font-weight="700">문의</text>
+
+        <line x1="575" y1="177" x2="620" y2="177" stroke="#50D000" stroke-width="3"/>
+        <polygon points="615,171 625,177 615,183" fill="#50D000"/>
+
+        <rect x="625" y="145" width="140" height="64" rx="12" fill="#DCFCE7" stroke="#50D000" stroke-width="2"/>
+        <text x="695" y="182" text-anchor="middle" fill="#166534" font-family="Pretendard Variable,sans-serif" font-size="16" font-weight="700">교육 등록</text>
+      </svg>
+    </div>
+    <table class="tbl rv rv-d5" style="margin-top:clamp(24px,3vh,36px)">
+      <thead><tr><th>끊긴 구간</th><th>상태</th><th>의미</th></tr></thead>
+      <tbody>
+        <tr><td><strong>발견 → 검색</strong></td><td><span class="badge badge-danger">없음</span></td><td>아직 검색하지 않는 사람에게 도달 불가</td></tr>
+        <tr><td><strong>검색 → 정보수집</strong></td><td><span class="badge" style="background:var(--warn);color:#fff">약함</span></td><td>"상담사 교육" 검색 시 해맑음이 안 나옴</td></tr>
+        <tr><td><strong>정보수집 → 비교검토</strong></td><td><span class="badge badge-danger">없음</span></td><td>수료생 후기, 취업 사례 콘텐츠 부재</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 11 · 세 명의 잠재 수강생 (페르소나)
+     ═══════════════════════════════════════════════ -->
+<section class="slide" id="s11" style="background:var(--surface-alt)">
+  <div class="container">
+    <h2 class="rv" style="font-size:clamp(26px,3.8vw,46px);margin-bottom:clamp(16px,3vh,32px)">
+      세 사람 모두 해맑음을<br><span class="t-danger">만나지 못하고</span> 있습니다
+    </h2>
+    <div class="g3">
+      <div class="card card-top-primary rv rv-d1">
+        <div class="badge badge-primary" style="margin-bottom:14px">대학원생 김민서 (27)</div>
+        <p style="font-size:clamp(14px,1.4vw,17px);margin-bottom:12px">
+          석사 마지막 학기, 취업 불안.<br>"상담사 취업" 검색
+        </p>
+        <p class="t-danger" style="font-size:clamp(13px,1.3vw,16px);font-weight:600">
+          → 검색 결과에 해맑음이 없어<br>다른 교육원 정보만 접함
+        </p>
+      </div>
+      <div class="card card-top-highlight rv rv-d2">
+        <div class="badge badge-highlight" style="margin-bottom:14px">경력단절 이수현 (35)</div>
+        <p style="font-size:clamp(14px,1.4vw,17px);margin-bottom:12px">
+          자격증 보유, 육아 후 복귀 고민.<br>맘카페에서 정보 탐색
+        </p>
+        <p class="t-danger" style="font-size:clamp(13px,1.3vw,16px);font-weight:600">
+          → 커뮤니티에 해맑음 관련 글이 없어<br>존재 자체를 모름
+        </p>
+      </div>
+      <div class="card card-top-teal rv rv-d3">
+        <div class="badge badge-teal" style="margin-bottom:14px">음악치료사 박서윤 (31)</div>
+        <p style="font-size:clamp(14px,1.4vw,17px);margin-bottom:12px">
+          석사, 프리랜서 수입 불안정.<br>인스타에서 다른 치료사 참고
+        </p>
+        <p class="t-danger" style="font-size:clamp(13px,1.3vw,16px);font-weight:600">
+          → 인스타에 해맑음 콘텐츠가 없어<br>접점이 없음
+        </p>
+      </div>
+    </div>
+    <div class="rv rv-d4" style="margin-top:clamp(24px,3vh,36px);text-align:center">
+      <p style="font-size:clamp(16px,1.8vw,22px);font-weight:700">
+        해맑음이 <span class="t-primary">정확히 해결해줄 수 있는 고민</span>을 안고 있는데도.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 12 · 브랜드 성장 전략 — 역순 세팅
+     ═══════════════════════════════════════════════ -->
+<section class="slide" id="s12">
+  <div class="container">
+    <h2 class="rv" style="font-size:clamp(28px,4vw,48px);margin-bottom:clamp(6px,1vh,12px)">브랜드 성장 전략</h2>
+    <p class="rv rv-d1 t-sub" style="font-size:clamp(14px,1.5vw,18px);margin-bottom:clamp(20px,3vh,32px)">원칙: <strong>뒷단부터 세팅한다</strong></p>
+    <div class="rv rv-d2" style="padding:clamp(16px,2vh,28px);background:var(--surface-alt);border-radius:var(--radius-md);margin-bottom:clamp(20px,3vh,32px)">
+      <p style="font-size:clamp(15px,1.6vw,19px)">
+        "해맑음 교육원"을 검색했는데 자사 콘텐츠가 없으면, 앞단에서 아무리 알려봤자 <strong class="t-danger">유실되는 잠재 수강생</strong>입니다.<br>
+        잠실센터도 <strong class="t-primary">블로그만 시작했는데 3주 만에 8건 유입</strong>이 발생했습니다.
+      </p>
+    </div>
+    <div class="g2">
+      <div class="card card-top-accent rv rv-d3" style="position:relative">
+        <div style="position:absolute;top:16px;right:16px;background:var(--accent);color:#fff;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:800;font-size:14px">1</div>
+        <h3 style="font-size:clamp(18px,2.2vw,24px);margin-bottom:8px">브랜드블로그 세팅</h3>
+        <p class="t-sub" style="font-size:clamp(14px,1.4vw,17px)">1개월차~ · "해맑음 교육원" 검색 시 자사 콘텐츠가 1페이지에 나오게</p>
+      </div>
+      <div class="card card-top-highlight rv rv-d4" style="position:relative">
+        <div style="position:absolute;top:16px;right:16px;background:var(--highlight);color:#fff;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:800;font-size:14px">2</div>
+        <h3 style="font-size:clamp(18px,2.2vw,24px);margin-bottom:8px">숏폼 계정 운영 시작</h3>
+        <p class="t-sub" style="font-size:clamp(14px,1.4vw,17px)">1개월차~ · 대표님 브랜딩 + 알고리즘 학습에 시간이 필요해 바로 시작</p>
+      </div>
+      <div class="card card-top-primary rv rv-d5" style="position:relative">
+        <div style="position:absolute;top:16px;right:16px;background:var(--primary);color:#fff;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:800;font-size:14px">3</div>
+        <h3 style="font-size:clamp(18px,2.2vw,24px);margin-bottom:8px">블로그 콘텐츠 확대</h3>
+        <p class="t-sub" style="font-size:clamp(14px,1.4vw,17px)">2개월차~ · 수료생 후기, 취업 사례, 교육 과정 비교 콘텐츠</p>
+      </div>
+      <div class="card card-top-teal rv rv-d6" style="position:relative">
+        <div style="position:absolute;top:16px;right:16px;background:var(--teal);color:#fff;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:800;font-size:14px">4</div>
+        <h3 style="font-size:clamp(18px,2.2vw,24px);margin-bottom:8px">서초센터 블로그 세팅</h3>
+        <p class="t-sub" style="font-size:clamp(14px,1.4vw,17px)">1개월차~ · 신규 오픈 센터 지역 키워드 선점 + 초기 브랜딩</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 13 · 왜 이 채널 구성인가
+     ═══════════════════════════════════════════════ -->
+<section class="slide" id="s13" style="background:var(--surface-alt)">
+  <div class="container">
+    <h2 class="rv" style="font-size:clamp(26px,3.8vw,46px);margin-bottom:clamp(16px,3vh,32px)">왜 이 채널 구성인가?</h2>
+    <div class="g2">
+      <div class="card card-top-highlight rv rv-d1">
+        <div class="badge badge-highlight" style="margin-bottom:14px">숏폼</div>
+        <h3 style="font-size:clamp(18px,2.2vw,26px);margin-bottom:12px">대표님이 직접 이야기하는 것이<br>가장 강력합니다</h3>
+        <ul style="font-size:clamp(14px,1.4vw,17px);color:var(--ink-sub);list-style:none;padding:0">
+          <li style="padding:6px 0;border-bottom:1px solid var(--border-light)">• 교육 상품은 "누가 가르치는가"가 결정적</li>
+          <li style="padding:6px 0;border-bottom:1px solid var(--border-light)">• 상담 현장 이야기 → 전문성과 진정성 전달</li>
+          <li style="padding:6px 0;border-bottom:1px solid var(--border-light)">• 수료생 실제 근무 현장 → "여기서 일할 수 있구나"</li>
+          <li style="padding:6px 0">• "자격증 따도 취업 안 된다" → 해맑음의 해법</li>
+        </ul>
+      </div>
+      <div class="card card-top-accent rv rv-d2">
+        <div class="badge badge-accent" style="margin-bottom:14px">브랜드블로그</div>
+        <h3 style="font-size:clamp(18px,2.2vw,26px);margin-bottom:12px">검색하는 사람을 잡는<br>자산</h3>
+        <ul style="font-size:clamp(14px,1.4vw,17px);color:var(--ink-sub);list-style:none;padding:0">
+          <li style="padding:6px 0;border-bottom:1px solid var(--border-light)">• 숏폼 → 관심 → <strong>반드시 검색</strong> → 블로그</li>
+          <li style="padding:6px 0;border-bottom:1px solid var(--border-light)">• 검색인지: "상담사 교육", "상담센터 취업"</li>
+          <li style="padding:6px 0;border-bottom:1px solid var(--border-light)">• 비교검토: 수료생 후기, 취업 연계 프로세스</li>
+          <li style="padding:6px 0">• 브랜드키워드: "해맑음 교육원" 1페이지 확보</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card card-top-teal rv rv-d3" style="margin-top:clamp(16px,2.5vw,28px)">
+      <div class="badge badge-teal" style="margin-bottom:14px">서초센터 블로그</div>
+      <p style="font-size:clamp(15px,1.6vw,19px)">
+        잠실센터가 증명했습니다 — 블로그 시작 <strong class="t-teal">3주 만에 8건 유입, 4건 장기고객</strong>.<br>
+        서초센터도 오픈과 동시에 블로그를 시작하면, 지역 키워드를 선점하고 초기 고객을 확보합니다.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 14 · 성장 후 고객경로
+     ═══════════════════════════════════════════════ -->
+<section class="slide" id="s14">
+  <div class="container">
+    <h2 class="rv" style="font-size:clamp(26px,3.8vw,46px);margin-bottom:clamp(6px,1vh,12px)">성장 후 고객경로</h2>
+    <p class="rv rv-d1 t-sub" style="font-size:clamp(14px,1.5vw,18px);margin-bottom:clamp(20px,3vh,32px)">모든 유입 경로가 연결됩니다</p>
+    <p class="rv rv-d1" style="font-size:clamp(14px,1.5vw,18px);margin-bottom:clamp(16px,2vh,24px);max-width:800px">
+      숏폼에서 대표님을 발견한 사람이 검색하고, 블로그에서 커리큘럼을 확인하고, 수료생 후기를 읽고, 문의합니다.<br>
+      <strong class="t-primary">지금은 끊겨있는 경로가, 3개월 후 하나로 이어집니다.</strong>
+    </p>
+    <div class="rv rv-d2" style="margin-bottom:clamp(20px,3vh,32px);overflow-x:auto">
+      <svg viewBox="0 0 860 400" style="width:100%;max-width:960px;height:auto;display:block;margin:0 auto">
+        <defs>
+          <marker id="arr-blue" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#3E90F5"/></marker>
+          <marker id="arr-green" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#50D000"/></marker>
+        </defs>
+
+        <!-- ── 발견인지 그룹 (점선) ── -->
+        <rect x="15" y="15" width="200" height="180" rx="16" fill="rgba(62,144,245,.03)" stroke="#3E90F5" stroke-width="1.5" stroke-dasharray="6,4"/>
+        <text x="115" y="38" text-anchor="middle" fill="#3E90F5" font-family="Outfit,sans-serif" font-size="11" font-weight="600" opacity=".7">발견인지</text>
+        <!-- 숏폼 노드 -->
+        <circle cx="80" cy="100" r="40" fill="rgba(255,140,66,.08)" stroke="#FF8C42" stroke-width="2"/>
+        <text x="80" y="96" text-anchor="middle" fill="#C2410C" font-family="Pretendard Variable,sans-serif" font-size="13" font-weight="700">숏폼</text>
+        <text x="80" y="114" text-anchor="middle" fill="#C2410C" font-family="Pretendard Variable,sans-serif" font-size="10">대표 브랜딩</text>
+        <!-- 인스타 서브노드 -->
+        <circle cx="155" cy="155" r="24" fill="rgba(255,140,66,.05)" stroke="#FF8C42" stroke-width="1" stroke-dasharray="4,3"/>
+        <text x="155" y="158" text-anchor="middle" fill="#C2410C" font-family="Pretendard Variable,sans-serif" font-size="9">인스타/유튜브</text>
+
+        <!-- ── 검색인지 그룹 (점선) ── -->
+        <rect x="240" y="15" width="260" height="180" rx="16" fill="rgba(80,208,0,.03)" stroke="#50D000" stroke-width="1.5" stroke-dasharray="6,4"/>
+        <text x="370" y="38" text-anchor="middle" fill="#166534" font-family="Outfit,sans-serif" font-size="11" font-weight="600" opacity=".7">검색인지 · 정보수집</text>
+        <!-- 블로그 SEO 노드 -->
+        <circle cx="310" cy="100" r="40" fill="rgba(80,208,0,.08)" stroke="#50D000" stroke-width="2"/>
+        <text x="310" y="96" text-anchor="middle" fill="#166534" font-family="Pretendard Variable,sans-serif" font-size="13" font-weight="700">블로그</text>
+        <text x="310" y="114" text-anchor="middle" fill="#166534" font-family="Pretendard Variable,sans-serif" font-size="10">SEO 키워드</text>
+        <!-- 정보수집 서브노드 -->
+        <circle cx="430" cy="100" r="34" fill="rgba(80,208,0,.05)" stroke="#50D000" stroke-width="1.5"/>
+        <text x="430" y="96" text-anchor="middle" fill="#166534" font-family="Pretendard Variable,sans-serif" font-size="11" font-weight="600">정보수집</text>
+        <text x="430" y="112" text-anchor="middle" fill="#166534" font-family="Pretendard Variable,sans-serif" font-size="9">교육 과정 상세</text>
+
+        <!-- ── 비교검토 그룹 ── -->
+        <rect x="525" y="15" width="160" height="180" rx="16" fill="rgba(80,208,0,.03)" stroke="#50D000" stroke-width="1.5" stroke-dasharray="6,4"/>
+        <text x="605" y="38" text-anchor="middle" fill="#166534" font-family="Outfit,sans-serif" font-size="11" font-weight="600" opacity=".7">비교검토</text>
+        <circle cx="605" cy="100" r="40" fill="rgba(80,208,0,.08)" stroke="#50D000" stroke-width="2"/>
+        <text x="605" y="96" text-anchor="middle" fill="#166534" font-family="Pretendard Variable,sans-serif" font-size="13" font-weight="700">수료생 후기</text>
+        <text x="605" y="114" text-anchor="middle" fill="#166534" font-family="Pretendard Variable,sans-serif" font-size="10">취업 사례</text>
+
+        <!-- ── 전환 그룹 ── -->
+        <rect x="710" y="15" width="135" height="180" rx="16" fill="rgba(62,144,245,.03)" stroke="#3E90F5" stroke-width="1.5" stroke-dasharray="6,4"/>
+        <text x="777" y="38" text-anchor="middle" fill="#3E90F5" font-family="Outfit,sans-serif" font-size="11" font-weight="600" opacity=".7">전환</text>
+        <circle cx="777" cy="100" r="40" fill="rgba(62,144,245,.08)" stroke="#3E90F5" stroke-width="2"/>
+        <text x="777" y="96" text-anchor="middle" fill="#3E90F5" font-family="Pretendard Variable,sans-serif" font-size="13" font-weight="700">홈페이지</text>
+        <text x="777" y="114" text-anchor="middle" fill="#3E90F5" font-family="Pretendard Variable,sans-serif" font-size="10">문의 전환</text>
+
+        <!-- ── 곡선 화살표: 숏폼 → 블로그 ── -->
+        <path d="M120,100 C180,100 210,100 270,100" fill="none" stroke="#3E90F5" stroke-width="2.5" marker-end="url(#arr-blue)"/>
+
+        <!-- ── 화살표: 블로그 → 정보수집 ── -->
+        <line x1="350" y1="100" x2="394" y2="100" stroke="#50D000" stroke-width="2" marker-end="url(#arr-green)"/>
+
+        <!-- ── 화살표: 정보수집 → 비교검토 ── -->
+        <line x1="464" y1="100" x2="563" y2="100" stroke="#50D000" stroke-width="2" marker-end="url(#arr-green)"/>
+
+        <!-- ── 화살표: 비교검토 → 전환 ── -->
+        <line x1="645" y1="100" x2="735" y2="100" stroke="#3E90F5" stroke-width="2.5" marker-end="url(#arr-blue)"/>
+
+        <!-- ── 곡선: 숏폼 → 블로그 건너뛰고 바로 브랜드검색 ── -->
+        <path d="M80,140 C80,220 200,260 340,280" fill="none" stroke="#3E90F5" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#arr-blue)"/>
+
+        <!-- ══ 하단: 브랜드검색 → 문의 → 교육등록 ══ -->
+        <!-- 브랜드 검색 -->
+        <circle cx="360" cy="300" r="44" fill="rgba(62,144,245,.08)" stroke="#3E90F5" stroke-width="2"/>
+        <text x="360" y="295" text-anchor="middle" fill="#3E90F5" font-family="Pretendard Variable,sans-serif" font-size="12" font-weight="700">브랜드 검색</text>
+        <text x="360" y="312" text-anchor="middle" fill="#3E90F5" font-family="Pretendard Variable,sans-serif" font-size="9">"해맑음 교육원"</text>
+        <!-- 라벨 -->
+        <text x="360" y="355" text-anchor="middle" fill="#3E90F5" font-family="Pretendard Variable,sans-serif" font-size="10" font-weight="600">★ 상위노출 확보</text>
+
+        <!-- 화살표: 브랜드검색 → 문의 -->
+        <line x1="404" y1="300" x2="510" y2="300" stroke="#50D000" stroke-width="3" marker-end="url(#arr-green)"/>
+
+        <!-- 문의 -->
+        <circle cx="545" cy="300" r="38" fill="#DCFCE7" stroke="#50D000" stroke-width="2.5"/>
+        <text x="545" y="305" text-anchor="middle" fill="#166534" font-family="Pretendard Variable,sans-serif" font-size="15" font-weight="700">문의</text>
+
+        <!-- 화살표: 문의 → 교육등록 -->
+        <line x1="583" y1="300" x2="670" y2="300" stroke="#50D000" stroke-width="3" marker-end="url(#arr-green)"/>
+
+        <!-- 교육 등록 (강조) -->
+        <circle cx="710" cy="300" r="44" fill="rgba(62,144,245,.12)" stroke="#3E90F5" stroke-width="3"/>
+        <text x="710" y="296" text-anchor="middle" fill="#3E90F5" font-family="Pretendard Variable,sans-serif" font-size="15" font-weight="800">교육 등록</text>
+        <text x="710" y="316" text-anchor="middle" fill="#3E90F5" font-family="Pretendard Variable,sans-serif" font-size="10">1명 = 500만원</text>
+
+        <!-- 곡선: 전환(홈페이지) → 브랜드검색 하단 -->
+        <path d="M777,140 C777,230 560,230 404,290" fill="none" stroke="#3E90F5" stroke-width="2" marker-end="url(#arr-blue)"/>
+
+        <!-- 빨간 핵심 라벨 -->
+        <text x="430" y="388" text-anchor="middle" fill="#EF4444" font-family="Pretendard Variable,sans-serif" font-size="12" font-weight="700">모든 경로가 하나로 연결됩니다</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 15 · 성장 채널 구성 + 예산 (1장으로 통합)
+     ═══════════════════════════════════════════════ -->
+<section class="slide" id="s15" style="background:var(--surface-alt)">
+  <div class="container">
+    <h2 class="rv" style="font-size:clamp(26px,3.5vw,42px);margin-bottom:clamp(14px,2vh,24px)">성장 채널 구성</h2>
+    <div class="g3 rv rv-d1">
+      <div class="price-card featured">
+        <div class="price-name">숏폼 계정 운영</div>
+        <p class="t-mute" style="font-size:clamp(11px,1.1vw,13px);margin-bottom:4px">교육원 · 발견인지</p>
+        <p class="t-mute" style="font-size:clamp(10px,1vw,12px);margin-bottom:8px">관리 기간 30일</p>
+        <div class="price-amount t-primary" style="font-size:clamp(22px,3vw,34px)">월 400만원</div>
+        <ul class="price-list">
+          <li>대표님 직접 출연 — 상담 현장 이야기</li>
+          <li>수료생 근무 현장, 교육 비하인드</li>
+          <li>인스타 / 유튜브 / 틱톡</li>
+          <li>전문가 브랜딩 + 문의 유입</li>
+        </ul>
+      </div>
+      <div class="price-card">
+        <div class="price-name">브랜드블로그 통합관리</div>
+        <p class="t-mute" style="font-size:clamp(11px,1.1vw,13px);margin-bottom:4px">교육원 · 검색인지</p>
+        <p class="t-mute" style="font-size:clamp(10px,1vw,12px);margin-bottom:8px">관리 기간 30일</p>
+        <div class="price-amount" style="font-size:clamp(22px,3vw,34px)">월 100만원</div>
+        <ul class="price-list">
+          <li>수료생 취업 사례, 커리큘럼 상세</li>
+          <li>상담사 진로 가이드, 센터 현장</li>
+          <li>교육원 소유 자산 (검색 OWNED)</li>
+          <li>"해맑음 교육원" 1페이지 확보</li>
+        </ul>
+      </div>
+      <div class="price-card" style="border-top:3px solid var(--teal)">
+        <div class="price-name">브랜드블로그 기초단계</div>
+        <p class="t-mute" style="font-size:clamp(11px,1.1vw,13px);margin-bottom:4px">서초센터 · 지역키워드</p>
+        <p class="t-mute" style="font-size:clamp(10px,1vw,12px);margin-bottom:8px">관리 기간 30일</p>
+        <div class="price-amount t-teal" style="font-size:clamp(22px,3vw,34px)">월 250만원</div>
+        <ul class="price-list">
+          <li>서초 심리상담, 강남 상담센터 키워드</li>
+          <li>지역 밀착 콘텐츠, 상담 사례</li>
+          <li>서초센터 소유 자산 (검색 OWNED)</li>
+          <li>잠실 성공 복제 — 3주 8건 유입</li>
+        </ul>
+      </div>
+    </div>
+    <div class="rv rv-d3" style="margin-top:clamp(16px,2.5vh,28px);padding:clamp(14px,2vh,24px);background:var(--surface);border-radius:var(--radius-md);border:1px solid var(--border);text-align:center">
+      <p style="font-size:clamp(16px,1.8vw,22px)">
+        <strong>월 합계 <span class="t-primary" style="font-size:clamp(22px,2.8vw,34px)">7,500,000원</span></strong>
+        <span class="t-sub" style="font-size:clamp(13px,1.3vw,16px);margin-left:12px">기본 대행 계약 + KPI 기반 성과 보수</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 17 · 기대 성과
+     ═══════════════════════════════════════════════ -->
+<section class="slide" id="s16" style="background:var(--surface-alt)">
+  <div class="container">
+    <h2 class="rv" style="font-size:clamp(28px,4vw,48px);margin-bottom:clamp(16px,3vh,32px)">기대 성과</h2>
+    <div class="g2">
+      <div class="card card-top-primary rv rv-d1">
+        <div class="badge badge-primary" style="margin-bottom:14px">교육원</div>
+        <h3 style="font-size:clamp(20px,2.5vw,30px);margin-bottom:14px">신규 교육생 <span class="t-primary">6~8명</span> 모집</h3>
+        <p style="font-size:clamp(15px,1.5vw,18px);color:var(--ink-sub)">+ 대표님/업체 브랜딩</p>
+        <div style="margin-top:16px;padding:14px;background:var(--primary-dim);border-radius:var(--radius-sm)">
+          <p style="font-size:clamp(14px,1.4vw,17px);font-weight:700">교육생 1명 = 500만원<br><span class="t-primary" style="font-size:clamp(18px,2.2vw,26px)">분기 3,000~4,000만원</span></p>
+        </div>
+      </div>
+      <div class="card card-top-teal rv rv-d2">
+        <div class="badge badge-teal" style="margin-bottom:14px">서초센터</div>
+        <h3 style="font-size:clamp(20px,2.5vw,30px);margin-bottom:14px">초기 확실한 <span class="t-teal">브랜딩</span></h3>
+        <p style="font-size:clamp(15px,1.5vw,18px);color:var(--ink-sub)">+ 이후 매출 확보</p>
+        <div style="margin-top:16px;padding:14px;background:var(--teal-dim);border-radius:var(--radius-sm)">
+          <p style="font-size:clamp(14px,1.4vw,17px);font-weight:700">잠실 실적 참고<br><span class="t-teal" style="font-size:clamp(18px,2.2vw,26px)">3주 8건 유입, 4건 장기</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="rv rv-d3" style="margin-top:clamp(24px,3vh,36px)">
+      <h3 style="font-size:clamp(18px,2.2vw,26px);margin-bottom:16px">문의가 늘어나는 구조</h3>
+      <div class="g2">
+        <div class="card card-tint-danger" style="padding:clamp(16px,2vh,28px)">
+          <p style="font-size:clamp(15px,1.6vw,19px)"><strong>지금</strong></p>
+          <p class="t-sub" style="font-size:clamp(14px,1.4vw,17px)">네이버 검색광고만 → 문의<br><strong class="t-danger">경로 1개</strong></p>
+        </div>
+        <div class="card card-tint-accent" style="padding:clamp(16px,2vh,28px)">
+          <p style="font-size:clamp(15px,1.6vw,19px)"><strong>3개월 후</strong></p>
+          <p class="t-sub" style="font-size:clamp(14px,1.4vw,17px)">숏폼 발견 → 문의<br>블로그 검색 → 문의<br>검색광고 → 블로그 → 문의<br><strong class="t-accent">경로 3개</strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 18 · 성과 채널별 흐름
+     ═══════════════════════════════════════════════ -->
+<section class="slide" id="s17">
+  <div class="container">
+    <h2 class="rv" style="font-size:clamp(26px,3.5vw,42px);margin-bottom:clamp(16px,3vh,32px)">각 채널이 교육생 모집에<br>기여하는 방식</h2>
+    <div class="g3">
+      <div class="card card-top-highlight rv rv-d1">
+        <div class="badge badge-highlight" style="margin-bottom:12px">숏폼</div>
+        <p style="font-size:clamp(14px,1.4vw,17px)">
+          <strong>대학원생 김민서</strong>가 인스타에서 대표님 영상 봄<br>
+          → "이 교육 뭐지?"<br>
+          → "해맑음 교육원" 검색<br>
+          → 블로그에서 커리큘럼 확인<br>
+          → <strong class="t-primary">문의</strong>
+        </p>
+      </div>
+      <div class="card card-top-accent rv rv-d2">
+        <div class="badge badge-accent" style="margin-bottom:12px">블로그</div>
+        <p style="font-size:clamp(14px,1.4vw,17px)">
+          <strong>경력단절 이수현</strong>이<br>"상담사 취업" 검색<br>
+          → 해맑음 수료생 취업 사례 발견<br>
+          → 교육 과정 확인<br>
+          → <strong class="t-primary">문의</strong>
+        </p>
+      </div>
+      <div class="card card-top-teal rv rv-d3">
+        <div class="badge badge-teal" style="margin-bottom:12px">블로그 + 숏폼</div>
+        <p style="font-size:clamp(14px,1.4vw,17px)">
+          <strong>음악치료사 박서윤</strong>이<br>숏폼에서 프리랜서 과정 영상 봄<br>
+          → 블로그에서 기본급+비율제 확인<br>
+          → <strong class="t-primary">문의</strong>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 19 · 성장 로드맵
+     ═══════════════════════════════════════════════ -->
+<section class="slide" id="s18" style="background:var(--surface-alt)">
+  <div class="container">
+    <h2 class="rv" style="font-size:clamp(28px,4vw,48px);margin-bottom:clamp(6px,1vh,12px)">성장 로드맵</h2>
+    <p class="rv rv-d1 t-sub" style="font-size:clamp(14px,1.5vw,18px);margin-bottom:clamp(24px,4vh,40px)">뒷단부터 앞단으로</p>
+    <div class="timeline rv rv-d2">
+      <div class="tl-item">
+        <div class="tl-dot">1</div>
+        <div class="tl-label">1개월차</div>
+        <div class="tl-desc">
+          교육원 블로그 세팅<br>
+          숏폼 계정 세팅 + 촬영<br>
+          서초센터 블로그 세팅<br>
+          <small class="t-mute">검색 시 나와야 숏폼 효과가 살아남</small>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot">2</div>
+        <div class="tl-label">2개월차</div>
+        <div class="tl-desc">
+          블로그 정보성 콘텐츠 확대<br>
+          숏폼 본격 운영 (주 2~3회)<br>
+          서초센터 블로그 확대<br>
+          <small class="t-mute">비교검토 콘텐츠 + 알고리즘 안정화</small>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot">3</div>
+        <div class="tl-label">3개월차</div>
+        <div class="tl-desc">
+          성과 측정 + 최적화<br>
+          숏폼 ↔ 블로그 연계 강화<br>
+          1분기 KPI 점검<br>
+          <small class="t-mute">교육생 6~8명 목표 달성 확인</small>
+        </div>
+      </div>
+    </div>
+    <div class="rv rv-d4" style="margin-top:clamp(24px,3vh,36px)">
+      <h3 style="font-size:clamp(18px,2vw,24px);margin-bottom:12px">성과 지표</h3>
+      <table class="tbl">
+        <thead><tr><th>지표</th><th>왜 보는가</th></tr></thead>
+        <tbody>
+          <tr><td><strong>교육 문의 건수</strong></td><td>교육원의 핵심 목표. 매월 추적</td></tr>
+          <tr><td><strong>교육생 등록 수</strong></td><td>실제 매출과 직결 (1명 = 500만원)</td></tr>
+          <tr><td><strong>서초센터 예약 건수</strong></td><td>신규 센터 성장 추적</td></tr>
+          <tr><td>문의 유입 경로별 비중</td><td>효율 높은 채널에 집중 투자</td></tr>
+          <tr><td>브랜드 키워드 검색량</td><td>인지도 상승 선행 지표</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 20 · CTA
+     ═══════════════════════════════════════════════ -->
+<section class="slide slide-cta" id="s19">
+  <div class="container center" style="max-width:820px">
+    <h2 class="rv" style="font-size:clamp(28px,4.5vw,56px);margin-bottom:clamp(16px,3vh,28px)">
+      부족한 건 교육의 질이 아니라,<br><span class="cta-hl">그 사실을 보여주는 것</span>입니다.
+    </h2>
+    <p class="rv rv-d2" style="font-size:clamp(16px,2vw,24px);color:rgba(255,255,255,.6);margin-bottom:clamp(24px,4vh,40px)">
+      잠실센터는 블로그 하나로 3주 만에 8건의 신규 유입을 만들었습니다.<br>
+      교육원에 숏폼까지 더하면, 검색하지 않는 잠재 수강생까지 도달합니다.
+    </p>
+    <div class="rv rv-d3" style="padding:clamp(20px,3vh,36px);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius-lg);background:rgba(255,255,255,.04)">
+      <h3 style="color:#fff;font-size:clamp(20px,2.5vw,30px);margin-bottom:16px">진행 절차</h3>
+      <div style="display:flex;gap:clamp(12px,2vw,24px);justify-content:center;flex-wrap:wrap;font-size:clamp(14px,1.5vw,18px);color:rgba(255,255,255,.7)">
+        <span style="display:flex;align-items:center;gap:8px"><span style="background:var(--primary);color:#fff;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800">1</span> 제안서 검토</span>
+        <span style="color:rgba(255,255,255,.3)">→</span>
+        <span style="display:flex;align-items:center;gap:8px"><span style="background:var(--primary);color:#fff;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800">2</span> 견적 협의</span>
+        <span style="color:rgba(255,255,255,.3)">→</span>
+        <span style="display:flex;align-items:center;gap:8px"><span style="background:var(--primary);color:#fff;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800">3</span> 계약 체결</span>
+        <span style="color:rgba(255,255,255,.3)">→</span>
+        <span style="display:flex;align-items:center;gap:8px"><span style="background:var(--highlight);color:#fff;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800">4</span> 1주 내 착수</span>
+      </div>
+    </div>
+    <div class="rv rv-d5" style="margin-top:clamp(32px,5vh,56px)">
+      <span class="logo" style="font-size:clamp(28px,4vw,48px);color:#fff">5FUNNEL</span>
+      <p style="color:rgba(255,255,255,.4);font-size:clamp(12px,1.2vw,15px);margin-top:8px">
+        주식회사 오에스씨 (OSC) · 브랜드 성장 파트너
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- JS -->
+<script>
+const slides=document.querySelectorAll('.slide');
+const counter=document.getElementById('slideCounter');
+const nav=document.getElementById('navDots');
+slides.forEach((_,i)=>{const a=document.createElement('a');a.href='#s'+(i+1);nav.appendChild(a)});
+const dots=nav.querySelectorAll('a');
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const idx=[...slides].indexOf(e.target);
+      counter.textContent=(idx+1)+' / '+slides.length;
+      dots.forEach((d,i)=>d.classList.toggle('active',i===idx));
+    }
+    e.target.querySelectorAll('.rv,.rv-scale').forEach(el=>{
+      if(e.isIntersecting)el.classList.add('visible');
+    });
+  });
+},{threshold:.35});
+slides.forEach(s=>io.observe(s));
+</script>
+</body>
+</html>
